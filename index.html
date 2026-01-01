@@ -25,7 +25,6 @@
             color: #333;
         }
 
-        /* NAGŁÓWEK - Czysty i profesjonalny */
         header {
             background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
             color: white;
@@ -52,11 +51,10 @@
             gap: 25px;
         }
 
-        /* ZDJĘCIE KWADRATOWE */
         .header-left img {
             width: 150px;
             height: 150px;
-            border-radius: 12px; /* Nowoczesny kwadrat z lekkim łukiem */
+            border-radius: 12px;
             border: 3px solid var(--accent-blue);
             object-fit: cover;
             background: white;
@@ -87,7 +85,6 @@
             text-align: center;
         }
 
-        /* GŁÓWNA TREŚĆ - BRAK NACHODZENIA */
         .main-container {
             display: grid;
             grid-template-columns: 350px 1fr;
@@ -95,13 +92,12 @@
             width: 90%;
             max-width: 1200px;
             background: white;
-            margin: 30px 0 60px 0; /* Naturalny odstęp pod nagłówkiem */
+            margin: 30px 0 60px 0;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* LEWA KOLUMNA */
         .left-column {
             background-color: var(--sidebar-navy);
             color: white;
@@ -143,7 +139,6 @@
             color: var(--accent-blue);
         }
 
-        /* PRAWA KOLUMNA */
         .right-column h2 {
             color: #012a4a;
             border-bottom: 2px solid #012a4a;
@@ -169,7 +164,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 12px;
+            margin-bottom: 5px;
         }
 
         .job-header h3 {
@@ -177,6 +172,14 @@
             color: #012a4a;
             font-size: 1.15em;
             max-width: 75%;
+        }
+
+        .job-tagline {
+            font-style: italic;
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 12px;
+            display: block;
         }
 
         .job-date {
@@ -201,7 +204,6 @@
             color: #444;
         }
 
-        /* WYKSZTAŁCENIE W SIDEBARZE */
         .edu-item {
             margin-bottom: 15px;
             padding: 10px 0;
@@ -209,7 +211,6 @@
         }
 
         .left-column .edu-item:last-child { border: none; }
-
         .left-column .edu-title { font-weight: bold; color: var(--accent-blue); font-size: 1.05em; margin-bottom: 3px;}
         .left-column .edu-date { color: #fff; font-weight: bold; font-size: 0.9em; margin-bottom: 3px; display: block;}
         .left-column .edu-desc { font-size: 0.9em; color: #ddd;}
@@ -254,7 +255,6 @@
 
     <div class="main-container">
         
-        <!-- KOLUMNA LEWA -->
         <div class="left-column">
             <h2><i class="fas fa-lightbulb"></i> Umiejętności</h2>
             <ul>
@@ -277,14 +277,7 @@
                 <li>Prawo jazdy kat. B</li>
             </ul>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-globe"></i> Języki</h2>
-            <ul>
-                <li>Język polski - ojczysty</li>
-            </ul>
-
-            <!-- PRZENIESIONE WYKSZTAŁCENIE -->
             <h2 style="margin-top: 40px;"><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
-
             <div class="edu-item">
                 <span class="edu-date">2000 – 2001</span>
                 <div class="edu-title">Policealne Studium Menadżerskie „Vademecum”</div>
@@ -304,48 +297,47 @@
             </div>
         </div>
 
-        <!-- KOLUMNA PRAWA -->
         <div class="right-column">
             <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
 
             <div class="job-card">
                 <div class="job-header">
                     <h3>Reporter Young – Sprzedawca</h3>
-                    <span class="job-date">2012 – Nadal</span>
+                    <span class="job-date">2012 – 31.03.2026</span>
                 </div>
+                <span class="job-tagline">Wykonywanie zadań w modelu współodpowiedzialności, obejmującym samodzielną koordynację procesów sklepowych oraz pełny zakres obowiązków salonu.</span>
                 <ul>
                     <li>Doradztwo przy wyborze produktów i profesjonalna pomoc klientom w zakupach.</li>
-                    <li>Samodzielna organizacja pracy salonu i dbanie o bieżące sprawy sklepu.</li>
+                    <li>Samodzielna organizacja pracy salonu.</li>
                     <li>Układanie towaru oraz dbanie o estetyczny wygląd witryn (Visual Merchandising).</li>
-                    <li>Efektywna współpraca z zespołem oraz dbanie o bezpieczeństwo towaru.</li>
+                    <li>Efektywna współpraca z zespołem.</li>
                 </ul>
             </div>
 
             <div class="job-card">
                 <div class="job-header">
-                    <h3>BRANDBQ Sp. z o.o. – Kierownik Sklepu</h3>
+                    <h3>MEDICINE (BRANDBQ Sp. z o.o.) – Kierownik Sklepu</h3>
                     <span class="job-date">2011 – 2012</span>
                 </div>
                 <ul>
                     <li>Prowadzenie zespołu: planowanie grafików, delegowanie i egzekwowanie zadań.</li>
-                    <li>Wdrażanie nowych pracowników v zakresie obsługi klienta i standardów marki.</li>
-                    <li>Odpowiedzialność za wynik finansowy, raportowanie i stany magazynowe.</li>
+                    <li>Wdrażanie nowych pracowników w zakresie obsługi klienta i standardów marki.</li>
+                    <li>Odpowiedzialność za wyniki finansowe, raportowanie i stany magazynowe.</li>
                     <li>Nadzór nad zaopatrzeniem i odpowiednią prezentacją aktualnych kolekcji.</li>
                 </ul>
             </div>
 
             <div class="job-card">
                 <div class="job-header">
-                    <h3>REPORTER – Kierownik / Zastępca / Sprzedawca</h3>
+                    <h3>REPORTER – Sprzedawca / Zastępca / Kierownik</h3>
                     <span class="job-date">2005 – 2010</span>
                 </div>
                 <ul>
                     <li>Awanse wewnętrzne od stanowiska sprzedawcy do kierownika salonu.</li>
-                    <li>Zarządzanie całością funkcjonowania sklepu i pracą podległego personelu.</li>
+                    <li>Zarządzanie całością funkcjonowania sklepu i pracą zespołu.</li>
                     <li>Analiza wyników sprzedaży i pilnowanie realizacji planów budżetowych.</li>
                     <li>Rekrutowanie personelu oraz przeprowadzanie szkoleń wewnętrznych.</li>
                     <li>Kontrola dostaw, zamawianie towaru i ekspozycja wg standardów marki.</li>
-                    <li>Profesjonalne rozwiązywanie reklamacji i spraw trudnych.</li>
                 </ul>
             </div>
 
@@ -356,7 +348,7 @@
                 </div>
                 <ul>
                     <li>Samodzielne prowadzenie punktu odzieżowego (odpowiedzialność za punkt).</li>
-                    <li>Otwieranie/zamykanie lokalu, bieżące rozliczanie sprzedaży i gotówki.</li>
+                    <li>Samodzielna realizacja procedur otwarcia i zamknięcia lokalu oraz rozliczanie transakcji finansowych.</li>
                     <li>Dbanie o atrakcyjny wygląd półek oraz estetykę punktu handlowego.</li>
                 </ul>
             </div>
