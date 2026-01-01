@@ -14,369 +14,403 @@
             --item-bg: #f9fcff;
         }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: var(--bg-body);
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #333;
-        }
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--bg-body);
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #333;
+    }
 
-        header {
-            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
-            color: white;
-            width: 100%;
-            padding: 40px 0;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            position: relative;
-        }
+    header {
+        background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+        color: white;
+        width: 100%;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        position: relative;
+    }
 
-        .header-content {
-            width: 90%;
-            max-width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
+    .header-content {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
 
-        .header-left img {
-            width: 150px;
-            height: 150px;
-            border-radius: 12px;
-            border: 3px solid var(--accent-blue);
-            object-fit: cover;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+    .header-left img {
+        width: 150px;
+        height: 150px;
+        border-radius: 12px;
+        border: 3px solid var(--accent-blue);
+        object-fit: cover;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
 
-        .header-left h1 {
-            font-size: 2.5em;
-            margin: 0;
-            line-height: 1.2;
-            font-weight: 700;
-        }
+    .header-left h1 {
+        font-size: 2.5em;
+        margin: 0;
+        line-height: 1.2;
+        font-weight: 700;
+    }
 
-        .contact-info {
-            text-align: right;
-            font-size: 0.95em;
-            line-height: 2;
-        }
+    .contact-info {
+        text-align: right;
+        font-size: 0.95em;
+        line-height: 2;
+    }
 
-        .contact-info span {
-            display: block;
-        }
+    .contact-info span {
+        display: block;
+    }
 
-        .contact-info i {
-            margin-left: 10px;
-            color: var(--accent-blue);
-            width: 20px;
-            text-align: center;
-        }
+    .contact-info i {
+        margin-left: 10px;
+        color: var(--accent-blue);
+        width: 20px;
+        text-align: center;
+    }
 
-        .main-container {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            width: 90%;
-            max-width: 1200px;
-            background: white;
-            margin: 30px 0 60px 0;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden; 
-        }
+    .main-container {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        width: 90%;
+        max-width: 1200px;
+        background: white;
+        margin: 30px 0 60px 0;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        overflow: hidden; 
+    }
 
-        .left-column {
-            background-color: var(--sidebar-navy);
-            color: white;
-            padding: 40px 30px;
-        }
+    .left-column {
+        background-color: var(--sidebar-navy);
+        color: white;
+        padding: 40px 30px;
+    }
 
-        .left-column h2 {
-            border-bottom: 2px solid var(--accent-blue);
-            padding-bottom: 10px;
-            margin: 0 0 20px 0;
-            font-size: 1.3em;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .left-column h2 {
+        border-bottom: 2px solid var(--accent-blue);
+        padding-bottom: 10px;
+        margin: 0 0 20px 0;
+        font-size: 1.3em;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
-        .left-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    .left-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-        .left-column ul li {
-            margin-bottom: 15px;
-            line-height: 1.5;
-            position: relative;
-            padding-left: 22px; /* Zmniejszone dla mniejszych kropek */
-            font-size: 0.9em;
-        }
+    .left-column ul li {
+        margin-bottom: 15px;
+        line-height: 1.5;
+        position: relative;
+        padding-left: 25px;
+        font-size: 0.9em;
+    }
 
-        /* STYLIZACJA KROPEK ZAMIAST PTASZKÓW */
-        .left-column ul li::before {
-            content: "\f111"; /* Ikona kropki z Font Awesome */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 5px; /* Wyśrodkowanie kropki względem linii tekstu */
-            font-size: 0.6em; /* Mniejsza, subtelniejsza kropka */
-            color: var(--accent-blue);
-        }
+    .left-column ul li::before {
+        content: "\f111"; /* Zmienione na kropkę (Solid Circle) */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 6px; /* Wyśrodkowanie kropki do linii tekstu */
+        font-size: 7px; /* Dopasowanie rozmiaru kropki */
+        color: var(--accent-blue);
+    }
 
-        .right-column {
-            padding: 40px;
-        }
+    .right-column {
+        padding: 40px;
+    }
 
-        .right-column h2 {
-            color: #012a4a;
-            border-bottom: 2px solid #012a4a;
-            padding-bottom: 8px;
-            margin: 0 0 25px 0;
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .right-column h2 {
+        color: #012a4a;
+        border-bottom: 2px solid #012a4a;
+        padding-bottom: 8px;
+        margin: 0 0 25px 0;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
-        .job-card {
-            background-color: var(--item-bg);
-            border: 1px solid #e1e9f1;
-            border-left: 6px solid var(--sidebar-navy);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
+    .job-card {
+        background-color: var(--item-bg);
+        border: 1px solid #e1e9f1;
+        border-left: 6px solid var(--sidebar-navy);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-        .job-header h3 {
-            margin: 0;
-            color: #012a4a;
-            font-size: 1.15em;
-            max-width: 75%;
-        }
+    .job-header h3 {
+        margin: 0;
+        color: #012a4a;
+        font-size: 1.15em;
+        max-width: 75%;
+    }
 
-        .job-tagline {
-            font-style: italic;
-            font-size: 0.88em;
-            color: #666;
-            margin-bottom: 12px;
-            display: block;
-        }
+    .job-tagline {
+        font-style: italic;
+        font-size: 0.88em;
+        color: #666;
+        margin-bottom: 12px;
+        display: block;
+    }
 
-        .job-date {
-            font-weight: bold;
-            color: var(--sidebar-navy);
-            font-size: 0.85em;
-            background: #eef5ff;
-            padding: 4px 10px;
-            border-radius: 12px;
-            white-space: nowrap;
-        }
+    .job-date {
+        font-weight: bold;
+        color: var(--sidebar-navy);
+        font-size: 0.85em;
+        background: #eef5ff;
+        padding: 4px 10px;
+        border-radius: 12px;
+        white-space: nowrap;
+    }
 
-        .job-card ul {
-            margin: 10px 0 0 0;
-            padding-left: 18px;
-        }
+    .job-card ul {
+        margin: 10px 0 0 0;
+        padding-left: 18px;
+    }
 
-        .job-card ul li {
-            margin-bottom: 6px;
-            font-size: 0.92em;
-            line-height: 1.5;
-            color: #444;
-        }
+    .job-card ul li {
+        margin-bottom: 6px;
+        font-size: 0.92em;
+        line-height: 1.5;
+        color: #444;
+    }
 
-        .edu-item {
-            margin-bottom: 15px;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+    .edu-item {
+        margin-bottom: 15px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-        .left-column .edu-item:last-child { border: none; }
-        .left-column .edu-title { font-weight: bold; color: var(--accent-blue); font-size: 1.05em; margin-bottom: 3px;}
-        .left-column .edu-date { color: #fff; font-weight: bold; font-size: 0.9em; margin-bottom: 3px; display: block;}
-        .left-column .edu-desc { font-size: 0.9em; color: #ddd;}
+    .left-column .edu-item:last-child { border: none; }
+    .left-column .edu-title { font-weight: bold; color: var(--accent-blue); font-size: 1.05em; margin-bottom: 3px;}
+    .left-column .edu-date { color: #fff; font-weight: bold; font-size: 0.9em; margin-bottom: 3px; display: block;}
+    .left-column .edu-desc { font-size: 0.9em; color: #ddd;}
 
-        .rodo-box {
-            margin-top: 40px;
-            font-size: 0.72em;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            text-align: justify;
-        }
+    .rodo-box {
+        margin-top: 40px;
+        font-size: 0.72em;
+        color: #888;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        text-align: justify;
+    }
 
-        @media (max-width: 1000px) {
-            .header-content { flex-direction: column; text-align: center; }
-            .contact-info { text-align: center; margin-top: 20px; }
-            .main-container { grid-template-columns: 1fr; margin-top: 20px; border-radius: 0; }
-        }
-    </style>
+    @media (max-width: 1000px) {
+        .header-content { flex-direction: column; text-align: center; }
+        .contact-info { text-align: center; margin-top: 20px; }
+        .main-container { grid-template-columns: 1fr; margin-top: 20px; border-radius: 0; }
+    }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <div class="header-left">
-                <img src="twoje-zdjecie.jpg" alt="Małgorzata Fryzowicz Brzychczy">
-                <div>
-                    <h1>Małgorzata<br>Fryzowicz—Brzychczy</h1>
-                </div>
-            </div>
-            <div class="contact-info">
-                <span>(+48) 602 572 527 <i class="fas fa-phone"></i></span>
-                <span>goniabrzychczy@wp.pl <i class="fas fa-envelope"></i></span>
-                <span>os. Strusia 7/202, Kraków <i class="fas fa-map-marker-alt"></i></span>
-                <span>09.03.1978 r. <i class="fas fa-calendar-alt"></i></span>
+<header>
+    <div class="header-content">
+        <div class="header-left">
+            <img src="twoje-zdjecie.jpg" alt="Małgorzata Fryzowicz Brzychczy">
+            <div>
+                <h1>Małgorzata<br>Fryzowicz—Brzychczy</h1>
             </div>
         </div>
-    </header>
+        <div class="contact-info">
+            <span>(+48) 602 572 527 <i class="fas fa-phone"></i></span>
+            <span>goniabrzychczy@wp.pl <i class="fas fa-envelope"></i></span>
+            <span>os. Strusia 7/202, Kraków <i class="fas fa-map-marker-alt"></i></span>
+            <span>09.03.1978 r. <i class="fas fa-calendar-alt"></i></span>
+        </div>
+    </div>
+</header>
 
-    <div class="main-container">
-        
-        <div class="left-column">
-            <h2><i class="fas fa-lightbulb"></i> Umiejętności</h2>
-            <ul>
-                <li>Zarządzanie zespołem</li>
-                <li>Profesjonalna obsługa klienta</li>
-                <li>Komunikatywność i łatwość nawiązywania kontaktu z klientem</li>
-                <li>Umiejętność pracy z ludźmi</li>
-                <li>Visual Merchandising</li>
-                <li>Praca pod presją czasu</li>
-            </ul>
+<div class="main-container">
+    
+    <div class="left-column">
+        <h2><i class="fas fa-lightbulb"></i> Umiejętności</h2>
+        <ul>
+            <li>Zarządzanie zespołem</li>
+            <li>Profesjonalna obsługa klienta</li>
+            <li>Komunikatywność i łatwość nawiązywania kontaktu z klientem</li>
+            <li>Umiejętność pracy z ludźmi</li>
+            <li>Visual Merchandising</li>
+            <li>Praca pod presją czasu</li>
+        </ul>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-award"></i> Atuty</h2>
-            <ul>
-                <li>Kurs obsługi klienta – SLG International</li>
-                <li>Uczciwość i rzetelność</li>
-                <li>Sumienność i dyspozycyjność</li>
-                <li>Bezkonfliktowość</li>
-                <li>Lojalność zawodowa</li>
-                <li>Prawo jazdy kat. B</li>
-            </ul>
+        <h2 style="margin-top: 40px;"><i class="fas fa-award"></i> Atuty</h2>
+        <ul>
+            <li>Kurs obsługi klienta – zorganizowany przez SLG International Trading Center</li>
+            <li>Uczciwość i rzetelność</li>
+            <li>Sumienność</li>
+            <li>Dyspozycyjność</li>
+            <li>Bezkonfliktowość</li>
+            <li>Lojalność zawodowa</li>
+            <li>Prawo jazdy kat. B</li>
+        </ul>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
-            <div class="edu-item">
-                <span class="edu-date">2000 – 2001</span>
-                <div class="edu-title">Policealne Studium Menadżerskie „Vademecum”</div>
-                <div class="edu-desc">Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></div>
-            </div>
-
-            <div class="edu-item">
-                <span class="edu-date">1997 – 2000</span>
-                <div class="edu-title">Liceum Handlowe dla Pracujących</div>
-                <div class="edu-desc">Tytuł zawodowy: <strong>technik handlowiec</strong></div>
-            </div>
-
-            <div class="edu-item">
-                <span class="edu-date">1992 – 1995</span>
-                <div class="edu-title">Zasadnicza Szkoła Zawodowa</div>
-                <div class="edu-desc">Tytuł zawodowy: <strong>sprzedawca</strong></div>
-            </div>
+        <h2 style="margin-top: 40px;"><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
+        <div class="edu-item">
+            <span class="edu-date">2000 – 2001</span>
+            <div class="edu-title">Policealne Studium Menadżerskie „Vademecum”</div>
+            <div class="edu-desc">Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></div>
         </div>
 
-        <div class="right-column">
-            <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
+        <div class="edu-item">
+            <span class="edu-date">1997 – 2000</span>
+            <div class="edu-title">Liceum Handlowe dla Pracujących – wydział zaoczny</div>
+            <div class="edu-desc">Tytuł zawodowy: <strong>technik handlowiec</strong></div>
+        </div>
 
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>Reporter Young – Sprzedawca</h3>
-                    <span class="job-date">2012 – Obecnie</span>
-                </div>
-                <span class="job-tagline">Praca bez koordynacji kierowniczej</span>
-                <ul>
-                    <li>Doradztwo przy wyborze produktów i profesjonalna pomoc klientom w zakupach.</li>
-                    <li>Samodzielna organizacja pracy salonu.</li>
-                    <li>Układanie towaru oraz dbanie o estetyczny wygląd witryn (Visual Merchandising).</li>
-                    <li>Efektywna współpraca z zespołem.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>MEDICINE – Kierownik Sklepu</h3>
-                    <span class="job-date">2011 – 2012</span>
-                </div>
-                <ul>
-                    <li>Organizowanie i wspieranie pracy zespołu w realizacji celów.</li>
-                    <li>Wdrażanie nowych pracowników w zakresie obsługi klienta i standardów marki.</li>
-                    <li>Odpowiedzialność za wyniki finansowe, raportowanie i stany magazynowe.</li>
-                    <li>Nadzór nad zaopatrzeniem i odpowiednią prezentacją aktualnych kolekcji.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>REPORTER – Sprzedawca / Zastępca / Kierownik</h3>
-                    <span class="job-date">2005 – 2010</span>
-                </div>
-                <ul>
-                    <li>Awanse wewnętrzne od stanowiska sprzedawcy do kierownika salonu.</li>
-                    <li>Zarządzanie całością funkcjonowania sklepu i pracą zespołu.</li>
-                    <li>Analiza wyników sprzedaży i pilnowanie realizacji planów budżetowych.</li>
-                    <li>Rekrutowanie personelu oraz przeprowadzanie szkoleń wewnętrznych.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>MATI Firma Handlowa – Sprzedawca</h3>
-                    <span class="job-date">2004 – 2005</span>
-                </div>
-                <ul>
-                    <li>Samodzielne prowadzenie punktu odzieżowego (odpowiedzialność za punkt).</li>
-                    <li>Samodzielna realizacja procedur otwarcia i zamknięcia lokalu.</li>
-                    <li>Dbanie o atrakcyjny wygląd półek oraz estetykę punktu handlowego.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>Praca w Firmach Handlowych – Lider Zespołu</h3>
-                    <span class="job-date">1999 – 2002</span>
-                </div>
-                <ul>
-                    <li>Koordynacja akcji promocyjnych i organizacja eventów handlowych.</li>
-                    <li>Dobór, szkolenie oraz aktywny nadzór nad pracą hostess.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>ORSAY – Sprzedawca</h3>
-                    <span class="job-date">05.1999 – 11.1999</span>
-                </div>
-                <ul>
-                    <li>Aktywna pomoc klientom zgodnie ze standardami obsługi marki.</li>
-                    <li>Przyjmowanie dostaw oraz przygotowanie odzieży do sprzedaży.</li>
-                </ul>
-            </div>
-
-            <div class="rodo-box">
-                Wyrażam zgodę na przetwarzanie moich danych osobowych również na potrzeby przyszłych rekrutacji, zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
-            </div>
+        <div class="edu-item">
+            <span class="edu-date">1992 – 1995</span>
+            <div class="edu-title">Zasadnicza Szkoła Zawodowa</div>
+            <div class="edu-desc">Tytuł zawodowy: <strong>sprzedawca</strong></div>
         </div>
     </div>
 
+    <div class="right-column">
+        <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>Reporter Young – Sprzedawca</h3>
+                <span class="job-date">2012 – 31.03.2026</span>
+            </div>
+            <span class="job-tagline">Praca bez koordynacji kierowniczej</span>
+            <ul>
+                <li>Doradztwo przy wyborze produktów i profesjonalna pomoc klientom w zakupach.</li>
+                <li>Samodzielna organizacja pracy salonu.</li>
+                <li>Układanie towaru oraz dbanie o estetyczny wygląd witryn (Visual Merchandising).</li>
+                <li>Efektywna współpraca z zespołem.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>MEDICINE – Kierownik Sklepu</h3>
+                <span class="job-date">2011 – 2012</span>
+            </div>
+            <ul>
+                <li>Organizowanie i wspieranie pracy zespołu w realizacji celów.</li>
+                <li>Wdrażanie nowych pracowników w zakresie obsługi klienta i standardów marki.</li>
+                <li>Odpowiedzialność za wyniki finansowe, raportowanie i stany magazynowe.</li>
+                <li>Nadzór nad zaopatrzeniem i odpowiednią prezentacją aktualnych kolekcji.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>REPORTER – Sprzedawca / Zastępca / Kierownik</h3>
+                <span class="job-date">2005 – 2010</span>
+            </div>
+            <ul>
+                <li>Awanse wewnętrzne od stanowiska sprzedawcy do kierownika salonu.</li>
+                <li>Zarządzanie całością funkcjonowania sklepu i pracą zespołu.</li>
+                <li>Analiza wyników sprzedaży i pilnowanie realizacji planów budżetowych.</li>
+                <li>Rekrutowanie personelu oraz przeprowadzanie szkoleń wewnętrznych.</li>
+                <li>Kontrola dostaw, zamawianie towaru i ekspozycja wg standardów marki.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>MATI Firma Handlowa – Sprzedawca</h3>
+                <span class="job-date">2004 – 2005</span>
+            </div>
+            <ul>
+                <li>Samodzielne prowadzenie punktu odzieżowego (odpowiedzialność za punkt).</li>
+                <li>Samodzielna realizacja procedur otwarcia i zamknięcia lokalu oraz rozliczanie transakcji finansowych.</li>
+                <li>Dbanie o atrakcyjny wygląd półek oraz estetykę punktu handlowego.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>Praca w Firmach Handlowych – Lider Zespołu Promocyjnego</h3>
+                <span class="job-date">1999 – 2002</span>
+            </div>
+            <ul>
+                <li>Koordynacja akcji promocyjnych i organizacja eventów handlowych.</li>
+                <li>Dobór, szkolenie oraz aktywny nadzór nad pracą hostess.</li>
+                <li>Budowanie relacji z przedstawicielami handlowymi i klientami biznesowymi.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>ORSAY – Sprzedawca</h3>
+                <span class="job-date">05.1999 – 11.1999</span>
+            </div>
+            <ul>
+                <li>Aktywna pomoc klientom zgodnie ze standardami obsługi marki.</li>
+                <li>Przyjmowanie dostaw oraz przygotowanie odzieży do sprzedaży.</li>
+                <li>Dbanie o porządek w strefie przymierzalni i estetykę salonu.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>HENKEL POLSKA S.A. – Lider Zespołu Promocyjnego</h3>
+                <span class="job-date">1997</span>
+            </div>
+            <ul>
+                <li>Bezpośredni udział w akcjach promocyjnych.</li>
+                <li>Wsparcie sprzedaży i koordynacja pracy zespołu promocyjnego.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>Lee Cooper – Sprzedawca</h3>
+                <span class="job-date">1996 – 1997</span>
+            </div>
+            <ul>
+                <li>Dobór asortymentu do potrzeb klientów.</li>
+                <li>Sprzedaż indywidualna i obsługa klienta.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <h3>PSS „Społem” – Pracownik Młodociany</h3>
+                <span class="job-date">1992 – 1995</span>
+            </div>
+            <ul>
+                <li>Okres szkoleniowy i praktyczna nauka zawodu sprzedawcy.</li>
+            </ul>
+        </div>
+
+        <div class="rodo-box">
+            Wyrażam zgodę na przetwarzanie moich danych osobowych również na potrzeby przyszłych rekrutacji, zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
+        </div>
+    </div>
+</div>
 </body>
 </html>
