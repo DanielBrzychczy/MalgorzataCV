@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --main-navy: #0d1b2a; /* Głęboki granat nagłówka */
-            --side-blue: #1b263b; /* Ciemniejszy błękit boczny */
-            --accent-blue: #415a77;
-            --bg-light: #e0f2f1; /* Jasne tło strony (podobnie jak na screenie) */
+            --main-navy: #0d1b2a;
+            --sidebar-navy: #01497c;
+            --accent-blue: #48cae4;
+            --bg-light: #e0f2f1;
         }
 
         body {
@@ -22,13 +22,12 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* NAGŁÓWEK NA CAŁĄ SZEROKOŚĆ (Header) */
+        /* NAGŁÓWEK - GÓRNA BELKA */
         header {
-            background: #008080; /* Kolor morski z Twojego CV lub zamień na #0d1b2a dla granatu */
-            background: linear-gradient(90deg, #0a192f 0%, #112240 100%); /* Nowoczesny granat */
+            background: linear-gradient(90deg, #0a192f 0%, #112240 100%);
             color: white;
             width: 100%;
-            padding: 40px 0;
+            padding: 50px 0 80px 0; /* Większy padding na dole, by zrobić tło pod kartę */
             display: flex;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -42,16 +41,32 @@
             align-items: center;
         }
 
-        .header-content h1 {
-            font-size: 3em;
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* STYLIZACJA ZDJĘCIA */
+        .header-left img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-blue);
+            object-fit: cover;
+            background: white;
+        }
+
+        .header-left h1 {
+            font-size: 2.8em;
             margin: 0;
-            font-weight: bold;
+            line-height: 1.1;
         }
 
         .contact-info {
             text-align: right;
             font-size: 0.95em;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .contact-info span {
@@ -60,42 +75,45 @@
 
         .contact-info i {
             margin-left: 10px;
-            color: #64ffda; /* Kolor akcentu dla ikon */
+            color: var(--accent-blue);
+            width: 20px;
+            text-align: center;
         }
 
-        /* GŁÓWNY KONTENER (Biała karta) */
+        /* GŁÓWNA KARTA CV */
         .main-container {
             display: grid;
-            grid-template-columns: 450px 1fr;
-            gap: 30px;
+            grid-template-columns: 420px 1fr;
+            gap: 40px;
             width: 90%;
             max-width: 1400px;
             background: white;
-            margin-top: -30px; /* Lekkie nachodzenie na header jak na screenie */
-            margin-bottom: 50px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            min-height: 1000px;
+            margin-top: -50px; /* Kontrolowane nachodzenie na belkę */
+            margin-bottom: 60px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 10;
         }
 
-        /* LEWA KOLUMNA (Ciemniejsza) */
+        /* LEWA KOLUMNA */
         .left-column {
-            background-color: #01497c; /* Granatowy boczny panel */
+            background-color: var(--sidebar-navy);
             color: white;
-            padding: 30px;
-            border-radius: 8px;
+            padding: 35px;
+            border-radius: 10px;
+            height: fit-content;
         }
 
         .left-column h2 {
-            border-bottom: 2px solid #48cae4;
-            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 12px;
             margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 1.5em;
+            margin-bottom: 25px;
+            font-size: 1.4em;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .left-column ul {
@@ -104,82 +122,95 @@
         }
 
         .left-column ul li {
-            margin-bottom: 15px;
-            line-height: 1.4;
+            margin-bottom: 18px;
+            line-height: 1.5;
             position: relative;
-            padding-left: 20px;
+            padding-left: 25px;
         }
 
         .left-column ul li::before {
-            content: "•";
+            content: "\f00c"; /* Ptaszek font-awesome */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             position: absolute;
             left: 0;
-            color: #48cae4;
-            font-weight: bold;
+            color: var(--accent-blue);
+            font-size: 0.9em;
         }
 
         /* PRAWA KOLUMNA */
         .right-column {
-            padding: 10px;
+            padding: 0 10px;
         }
 
         .right-column h2 {
-            color: #013a63;
-            border-bottom: 2px solid #013a63;
-            padding-bottom: 8px;
+            color: #012a4a;
+            border-bottom: 2px solid #012a4a;
+            padding-bottom: 10px;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .experience-item, .education-item {
-            background-color: #f1faff;
-            border: 1px solid #d1e9ff;
-            border-left: 6px solid #01497c;
-            padding: 20px;
-            margin-bottom: 15px;
+            background-color: #f8fbff;
+            border: 1px solid #e1e9f1;
+            border-left: 6px solid var(--sidebar-navy);
+            padding: 20px 25px;
+            margin-bottom: 20px;
             border-radius: 4px;
             position: relative;
+            transition: 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .experience-item h3, .education-item h3 {
             margin: 0;
             color: #012a4a;
-            font-size: 1.2em;
-            width: 80%;
+            font-size: 1.25em;
+            padding-right: 150px; /* Miejsce na datę */
         }
 
         .date-badge {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 22px;
+            right: 25px;
             font-weight: bold;
-            color: #01497c;
+            color: var(--sidebar-navy);
             font-size: 0.9em;
         }
 
         .experience-item p {
-            margin: 8px 0 0;
+            margin: 10px 0 0;
             font-size: 0.95em;
-            color: #333;
+            color: #444;
+            line-height: 1.4;
         }
 
         .rodo-box {
-            margin-top: 40px;
-            font-size: 0.75em;
-            color: #666;
-            border-top: 1px solid #ddd;
-            padding-top: 15px;
+            margin-top: 50px;
+            font-size: 0.78em;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
             text-align: justify;
+            line-height: 1.5;
         }
 
-        /* MOBILNOŚĆ */
-        @media (max-width: 900px) {
-            .header-content { flex-direction: column; text-align: center; }
-            .contact-info { text-align: center; margin-top: 20px; }
+        /* RESPONSYWNOŚĆ */
+        @media (max-width: 1000px) {
+            .header-content { flex-direction: column; gap: 30px; text-align: center; }
+            .header-left { flex-direction: column; }
+            .contact-info { text-align: center; }
             .main-container { grid-template-columns: 1fr; margin-top: 20px; }
+            .experience-item h3 { padding-right: 0; margin-bottom: 30px; }
+            .date-badge { position: relative; top: 0; right: 0; display: block; margin-bottom: 10px; }
         }
     </style>
 </head>
@@ -187,7 +218,11 @@
 
     <header>
         <div class="header-content">
-            <h1>Małgorzata <br> Fryzowicz Brzychczy</h1>
+            <div class="header-left">
+                <!-- TUTAJ ZDJĘCIE -->
+                <img src="twoje-zdjecie.jpg" alt="Zdjęcie Małgorzaty">
+                <h1>Małgorzata <br> Fryzowicz Brzychczy</h1>
+            </div>
             <div class="contact-info">
                 <span>(+48) 602 572 527 <i class="fas fa-phone"></i></span>
                 <span>goniabrzychczy@wp.pl <i class="fas fa-envelope"></i></span>
@@ -198,59 +233,60 @@
     </header>
 
     <div class="main-container">
-        <!-- LEWA KOLUMNA: UMIEJĘTNOŚCI I ATUTY -->
+        
+        <!-- LEWA KOLUMNA -->
         <div class="left-column">
-            <h2><i class="fas fa-tools"></i> Umiejętności</h2>
+            <h2><i class="fas fa-star"></i> Umiejętności</h2>
             <ul>
                 <li>Zaprezentowanie i reklama asortymentu</li>
                 <li>Umiejętność pracy w zespole</li>
                 <li>Wysoka odporność na stres i praca pod presją czasu</li>
-                <li>Zaawansowany Visual Merchandising (ekspozycja towaru)</li>
-                <li>Budowanie profesjonalnych relacji z klientem</li>
+                <li>Zaawansowany Visual Merchandising</li>
+                <li>Profesjonalna obsługa klienta</li>
             </ul>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-check-circle"></i> Osiągnięcia i atuty</h2>
+            <h2 style="margin-top: 45px;"><i class="fas fa-trophy"></i> Osiągnięcia i atuty</h2>
             <ul>
-                <li>Kurs obsługi klienta (SLG International Trading Center)</li>
+                <li>Kurs obsługi klienta (SLG International)</li>
                 <li>Prawo jazdy kategoria B</li>
                 <li>Uczciwość i sumienność</li>
-                <li>Dyspozycyjność do pracy zmianowej</li>
-                <li>Brak nałogów i wysoka kultura osobista</li>
-                <li>Bezkonfliktowość i lojalność</li>
+                <li>Pełna dyspozycyjność</li>
+                <li>Bez nałogów</li>
+                <li>Bezkonfliktowość</li>
+                <li>Lojalność</li>
             </ul>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-globe"></i> Języki</h2>
+            <h2 style="margin-top: 45px;"><i class="fas fa-language"></i> Języki</h2>
             <ul>
-                <li>Polski: Ojczysty</li>
+                <li>Język polski - ojczysty</li>
             </ul>
         </div>
 
-        <!-- PRAWA KOLUMNA: DOŚWIADCZENIE -->
+        <!-- PRAWA KOLUMNA -->
         <div class="right-column">
             <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
 
             <div class="experience-item">
                 <span class="date-badge">2012 – Nadal</span>
                 <h3>Reporter Young – Sprzedawca</h3>
-                <p>• Intensywna praca z klientem i aktywne doradztwo.</p>
-                <p>• Praca zespołowa i odpowiedzialność za powierzone mienie.</p>
-                <p>• Praca samodzielna bez koordynacji kierowniczej – pełny zakres obowiązków.</p>
+                <p>• Kompleksowa praca z klientem, doradztwo i sprzedaż.</p>
+                <p>• Współpraca w zespole, odpowiedzialność za ekspozycję.</p>
+                <p>• Samodzielne prowadzenie zmiany – pełny zakres obowiązków.</p>
             </div>
 
             <div class="experience-item">
                 <span class="date-badge">2011 – 2012</span>
                 <h3>BRANDBQ Sp. z o.o. – Kierownik sklepu</h3>
-                <p>• Szkolenie personelu i zarządzanie grafikiem pracy.</p>
-                <p>• Dbałość o nienaganny wizerunek sklepu i mienie firmy.</p>
-                <p>• Kompleksowa obsługa klienta zgodnie ze standardami marki.</p>
+                <p>• Szkolenie personelu oraz zarządzanie operacyjne sklepem.</p>
+                <p>• Nadzór nad mieniem firmy i dbałość o standardy visual.</p>
             </div>
 
             <div class="experience-item">
                 <span class="date-badge">2005 – 2010</span>
                 <h3>REPORTER – Kierownik / Sprzedawca</h3>
-                <p><b>Zajmowane stanowiska w ramach awansu:</b></p>
+                <p><b>Ścieżka rozwoju zawodowego:</b></p>
                 <p>• 16.01.2010 – 23.10.2010: <strong>Kierownik sklepu</strong></p>
-                <p>• 01.11.2008 – 15.01.2010: <strong>Zastępca kierownika sklepu</strong></p>
+                <p>• 01.11.2008 – 15.01.2010: <strong>Zastępca kierownika</strong></p>
                 <p>• 14.03.2005 – 31.10.2008: <strong>Sprzedawca</strong></p>
             </div>
 
@@ -263,35 +299,34 @@
             <div class="experience-item">
                 <span class="date-badge">1999 – 2002</span>
                 <h3>Lider zespołu promocyjnego</h3>
-                <p>• Nadzór nad organizacją akcji promocyjnych.</p>
-                <p>• Dobór, szkolenie oraz bezpośrednie nadzorowanie pracy hostess.</p>
-                <p>• Współpraca z przedstawicielami handlowymi.</p>
+                <p>• Rekrutacja, szkolenie i nadzór nad pracą hostess.</p>
+                <p>• Organizacja akcji promocyjnych i współpraca z handlowcami.</p>
             </div>
 
             <div class="experience-item" style="opacity: 0.8;">
-                <span class="date-badge">05.1999 – 11.1999</span>
+                <span class="date-badge">1999</span>
                 <h3>ORSAY – Sprzedawca</h3>
-                <p>• Zamawianie towaru, dbałość o standardy wizualne, obsługa klienta.</p>
+                <p>• Sprzedaż, zamawianie towaru oraz dbanie o visual.</p>
             </div>
 
-            <h2><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
+            <h2 style="margin-top: 40px;"><i class="fas fa-university"></i> Wykształcenie</h2>
 
             <div class="education-item">
                 <span class="date-badge">2000 – 2001</span>
-                <h3>Policealne Studium Menadżerskie „Vademecum”</h3>
-                <p>Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></p>
+                <h3>Studium Menadżerskie „Vademecum”</h3>
+                <p>Tytuł: <strong>Technik marketingu i reklamy</strong></p>
             </div>
 
             <div class="education-item">
                 <span class="date-badge">1997 – 2000</span>
-                <h3>Liceum Handlowe dla Pracujących</h3>
-                <p>Tytuł zawodowy: <strong>technik – handlowiec</strong></p>
+                <h3>Liceum Handlowe</h3>
+                <p>Tytuł: <strong>Technik – handlowiec</strong></p>
             </div>
 
             <div class="education-item">
                 <span class="date-badge">1992 – 1995</span>
                 <h3>Zasadnicza Szkoła Zawodowa</h3>
-                <p>Tytuł zawodowy: <strong>sprzedawca</strong></p>
+                <p>Tytuł: <strong>Sprzedawca</strong></p>
             </div>
 
             <div class="rodo-box">
