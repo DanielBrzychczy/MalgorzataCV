@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --bg-body: #0a0a0a; /* Czarny tła */
-            --bg-container: #121212; /* Ciemny grafit karty */
-            --bg-sidebar: #1a1a1a; /* Nieco jaśniejszy boczny panel */
-            --text-main: #e0e0e0;
-            --text-dim: #b0b0b0;
-            --accent-blue: #4fc3f7; /* Jasny błękit akcentu */
-            --card-item: #1e1e1e;
+            --sidebar-navy: #013a63;
+            --header-dark: #0a192f;
+            --accent-blue: #48cae4;
+            --bg-body: #f0f4f8;
+            --item-bg: #f9fcff;
         }
 
         body {
@@ -23,19 +21,20 @@
             background-color: var(--bg-body);
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Helvetica, sans-serif;
-            color: var(--text-main);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
         }
 
-        /* NAGŁÓWEK */
+        /* NAGŁÓWEK - Czysty i profesjonalny */
         header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
             color: white;
             width: 100%;
             padding: 40px 0;
             display: flex;
             justify-content: center;
-            border-bottom: 2px solid #222;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
         }
 
         .header-content {
@@ -44,6 +43,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
         .header-left {
@@ -52,70 +52,72 @@
             gap: 25px;
         }
 
+        /* ZDJĘCIE KWADRATOWE */
         .header-left img {
-            width: 140px;
-            height: 140px;
-            border-radius: 15px; /* Kwadrat z lekkim zaokrągleniem */
+            width: 150px;
+            height: 150px;
+            border-radius: 12px; /* Nowoczesny kwadrat z lekkim łukiem */
             border: 3px solid var(--accent-blue);
             object-fit: cover;
-            background: #111;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .header-left h1 {
             font-size: 2.5em;
             margin: 0;
             line-height: 1.2;
-            color: white;
+            font-weight: 700;
         }
 
         .contact-info {
             text-align: right;
-            font-size: 0.9em;
+            font-size: 0.95em;
             line-height: 1.8;
-            color: var(--text-dim);
+        }
+
+        .contact-info span {
+            display: block;
         }
 
         .contact-info i {
-            margin-left: 8px;
+            margin-left: 10px;
             color: var(--accent-blue);
             width: 20px;
+            text-align: center;
         }
 
-        /* GŁÓWNY KONTENER */
+        /* GŁÓWNA TREŚĆ - BRAK NACHODZENIA */
         .main-container {
             display: grid;
-            grid-template-columns: 320px 1fr;
+            grid-template-columns: 350px 1fr;
             gap: 30px;
             width: 90%;
             max-width: 1200px;
-            background-color: var(--bg-container);
-            margin: 30px 0 60px 0;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            background: white;
+            margin: 30px 0 60px 0; /* Naturalny odstęp pod nagłówkiem */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* KOLUMNA LEWA - SIDEBAR */
+        /* LEWA KOLUMNA */
         .left-column {
-            background-color: var(--bg-sidebar);
-            padding: 25px;
+            background-color: var(--sidebar-navy);
+            color: white;
+            padding: 30px;
             border-radius: 8px;
             height: fit-content;
         }
 
-        .sidebar-section {
-            margin-bottom: 35px;
-        }
-
         .left-column h2 {
             border-bottom: 2px solid var(--accent-blue);
-            padding-bottom: 8px;
-            margin: 0 0 15px 0;
-            font-size: 1.2em;
-            color: white;
+            padding-bottom: 10px;
+            margin: 0 0 20px 0;
+            font-size: 1.3em;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .left-column ul {
@@ -125,110 +127,109 @@
         }
 
         .left-column ul li {
-            margin-bottom: 12px;
-            font-size: 0.88em;
-            line-height: 1.4;
-            color: var(--text-dim);
-            padding-left: 20px;
+            margin-bottom: 15px;
+            line-height: 1.5;
             position: relative;
+            padding-left: 25px;
+            font-size: 0.9em;
         }
 
         .left-column ul li::before {
-            content: "•";
+            content: "\f00c";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             position: absolute;
             left: 0;
             color: var(--accent-blue);
-            font-weight: bold;
-        }
-
-        /* STYLIZACJA WYKSZTAŁCENIA W SIDEBARZE */
-        .edu-sidebar-item {
-            margin-bottom: 15px;
-        }
-        .edu-sidebar-date {
-            display: block;
-            font-weight: bold;
-            color: var(--accent-blue);
-            font-size: 0.85em;
-            margin-bottom: 2px;
-        }
-        .edu-sidebar-name {
-            display: block;
-            color: white;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-        .edu-sidebar-desc {
-            display: block;
-            font-size: 0.8em;
-            color: var(--text-dim);
-            margin-top: 2px;
         }
 
         /* PRAWA KOLUMNA */
         .right-column h2 {
-            color: white;
-            border-bottom: 2px solid var(--accent-blue);
+            color: #012a4a;
+            border-bottom: 2px solid #012a4a;
             padding-bottom: 8px;
-            margin: 0 0 20px 0;
-            font-size: 1.4em;
+            margin: 0 0 25px 0;
+            font-size: 1.5em;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .experience-card {
-            background-color: var(--card-item);
-            border-left: 4px solid var(--accent-blue);
+        .job-card {
+            background-color: var(--item-bg);
+            border: 1px solid #e1e9f1;
+            border-left: 6px solid var(--sidebar-navy);
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 4px;
+            position: relative;
         }
 
-        .exp-header {
+        .job-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            align-items: flex-start;
+            margin-bottom: 12px;
         }
 
-        .exp-header h3 {
+        .job-header h3 {
             margin: 0;
+            color: #012a4a;
             font-size: 1.15em;
-            color: white;
+            max-width: 75%;
         }
 
-        .exp-date {
-            color: var(--accent-blue);
+        .job-date {
             font-weight: bold;
+            color: var(--sidebar-navy);
             font-size: 0.85em;
+            background: #eef5ff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
         }
 
-        .experience-card ul {
+        .job-card ul {
             margin: 10px 0 0 0;
-            padding-left: 15px;
+            padding-left: 18px;
         }
 
-        .experience-card li {
-            color: var(--text-dim);
-            font-size: 0.9em;
-            line-height: 1.6;
-            margin-bottom: 5px;
+        .job-card ul li {
+            margin-bottom: 6px;
+            font-size: 0.92em;
+            line-height: 1.5;
+            color: #444;
         }
 
-        .rodo {
+        /* WYKSZTAŁCENIE */
+        .edu-item {
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .edu-item:last-child { border: none; }
+
+        .edu-title { font-weight: bold; color: #012a4a; font-size: 1.05em; margin-bottom: 3px;}
+        .edu-date { color: #013a63; font-weight: bold; font-size: 0.9em; margin-bottom: 3px; display: block;}
+        .edu-desc { font-size: 0.9em; color: #555;}
+
+        .rodo-box {
             margin-top: 40px;
-            font-size: 0.7em;
-            color: #666;
-            border-top: 1px dotted #333;
+            font-size: 0.72em;
+            color: #888;
+            border-top: 1px solid #eee;
             padding-top: 20px;
             text-align: justify;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             .header-content { flex-direction: column; text-align: center; }
             .header-left { flex-direction: column; }
-            .contact-info { text-align: center; margin-top: 15px; }
-            .main-container { grid-template-columns: 1fr; }
+            .contact-info { text-align: center; }
+            .main-container { grid-template-columns: 1fr; margin-top: 20px; }
+            .job-header { flex-direction: column; gap: 10px; }
+            .job-header h3 { max-width: 100%; }
         }
     </style>
 </head>
@@ -238,7 +239,9 @@
         <div class="header-content">
             <div class="header-left">
                 <img src="twoje-zdjecie.jpg" alt="Małgorzata Fryzowicz Brzychczy">
-                <h1>Małgorzata<br>Fryzowicz Brzychczy</h1>
+                <div>
+                    <h1>Małgorzata<br>Fryzowicz Brzychczy</h1>
+                </div>
             </div>
             <div class="contact-info">
                 <span>(+48) 602 572 527 <i class="fas fa-phone"></i></span>
@@ -250,131 +253,139 @@
     </header>
 
     <div class="main-container">
+        
         <!-- KOLUMNA LEWA -->
         <div class="left-column">
-            
-            <div class="sidebar-section">
-                <h2><i class="fas fa-tasks"></i> Umiejętności</h2>
-                <ul>
-                    <li>Doradztwo przy wyborze produktów i profesjonalna pomoc w zakupach.</li>
-                    <li>Zaawansowany Visual Merchandising i dbanie o estetykę salonu.</li>
-                    <li>Prowadzenie zespołu (grafiki, zadania, wyniki).</li>
-                    <li>Szkolenie nowych pracowników.</li>
-                    <li>Praca pod presją czasu i w stresie.</li>
-                </ul>
-            </div>
+            <h2><i class="fas fa-lightbulb"></i> Umiejętności</h2>
+            <ul>
+                <li>Profesjonalna obsługa klienta detalicznego</li>
+                <li>Doradztwo przy wyborze produktów</li>
+                <li>Zaawansowany Visual Merchandising</li>
+                <li>Zarządzanie zespołem i liderskie podejście</li>
+                <li>Dbanie o nienaganny wizerunek salonu</li>
+                <li>Praca pod presją czasu i odporność na stres</li>
+            </ul>
 
-            <div class="sidebar-section">
-                <h2><i class="fas fa-medal"></i> Atuty</h2>
-                <ul>
-                    <li>Uczciwość i pełna odpowiedzialność za mienie.</li>
-                    <li>Wysoka dyspozycyjność.</li>
-                    <li>Punktualność i rzetelność.</li>
-                    <li>Bezkonfliktowość i lojalność zawodowa.</li>
-                    <li>Prawo jazdy kat. B</li>
-                </ul>
-            </div>
+            <h2 style="margin-top: 40px;"><i class="fas fa-award"></i> Atuty</h2>
+            <ul>
+                <li>Uczciwość i pełna rzetelność</li>
+                <li>Wysoka dyspozycyjność</li>
+                <li>Punktualność i sumienność</li>
+                <li>Bezkonfliktowość i lojalność zawodowa</li>
+                <li>Brak nałogów</li>
+                <li>Kurs obsługi klienta (SLG International)</li>
+                <li>Prawo jazdy kat. B</li>
+            </ul>
 
-            <div class="sidebar-section">
-                <h2><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
-                
-                <div class="edu-sidebar-item">
-                    <span class="edu-sidebar-date">2000-2001</span>
-                    <span class="edu-sidebar-name">Studium Menadżerskie „Vademecum”</span>
-                    <span class="edu-sidebar-desc">Tytuł: Technik marketingu i reklamy</span>
-                </div>
-
-                <div class="edu-sidebar-item">
-                    <span class="edu-sidebar-date">1997-2000</span>
-                    <span class="edu-sidebar-name">Liceum Handlowe dla Pracujących</span>
-                    <span class="edu-sidebar-desc">Tytuł: Technik handlowiec (zaoczne)</span>
-                </div>
-
-                <div class="edu-sidebar-item">
-                    <span class="edu-sidebar-date">1992-1995</span>
-                    <span class="edu-sidebar-name">Zasadnicza Szkoła Zawodowa</span>
-                    <span class="edu-sidebar-desc">Zawód: Sprzedawca</span>
-                </div>
-            </div>
-
+            <h2 style="margin-top: 40px;"><i class="fas fa-globe"></i> Języki</h2>
+            <ul>
+                <li>Język polski - ojczysty</li>
+            </ul>
         </div>
 
         <!-- KOLUMNA PRAWA -->
         <div class="right-column">
             <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
 
-            <div class="experience-card">
-                <div class="exp-header">
-                    <h3>REPORTER YOUNG – Sprzedawca</h3>
-                    <span class="exp-date">2012 – Nadal</span>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>Reporter Young – Sprzedawca</h3>
+                    <span class="job-date">2012 – Nadal</span>
                 </div>
                 <ul>
-                    <li>Doradztwo produktowe i profesjonalna pomoc klientom w wyborze asortymentu.</li>
-                    <li>Samodzielna organizacja bieżącej pracy salonu.</li>
-                    <li>Układanie towaru oraz dbanie o visual merchandising witryn i wnętrza.</li>
-                    <li>Współpraca zespołowa w celu realizacji planów sprzedażowych.</li>
+                    <li>Doradztwo przy wyborze produktów i profesjonalna pomoc klientom w zakupach.</li>
+                    <li>Samodzielna organizacja pracy salonu i dbanie o bieżące sprawy sklepu.</li>
+                    <li>Układanie towaru oraz dbanie o estetyczny wygląd witryn (Visual Merchandising).</li>
+                    <li>Efektywna współpraca z zespołem oraz dbanie o bezpieczeństwo towaru.</li>
                 </ul>
             </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
+            <div class="job-card">
+                <div class="job-header">
                     <h3>BRANDBQ Sp. z o.o. – Kierownik Sklepu</h3>
-                    <span class="exp-date">2011 – 2012</span>
+                    <span class="job-date">2011 – 2012</span>
                 </div>
                 <ul>
-                    <li>Zarządzanie podległym zespołem: planowanie pracy, rozliczanie grafików.</li>
-                    <li>Onboarding nowych pracowników oraz wdrażanie standardów obsługi klienta.</li>
-                    <li>Nadzór nad stanami magazynowymi i zaopatrzeniem salonu.</li>
+                    <li>Prowadzenie zespołu: planowanie grafików, delegowanie i egzekwowanie zadań.</li>
+                    <li>Wdrażanie nowych pracowników w zakresie obsługi klienta i standardów marki.</li>
+                    <li>Odpowiedzialność za wynik finansowy, raportowanie i stany magazynowe.</li>
+                    <li>Nadzór nad zaopatrzeniem i odpowiednią prezentacją aktualnych kolekcji.</li>
                 </ul>
             </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
+            <div class="job-card">
+                <div class="job-header">
                     <h3>REPORTER – Kierownik / Zastępca / Sprzedawca</h3>
-                    <span class="exp-date">2005 – 2010</span>
+                    <span class="job-date">2005 – 2010</span>
                 </div>
                 <ul>
-                    <li>Sukcesywny awans w strukturach firmy.</li>
-                    <li>Monitorowanie wskaźników KPI i analiza wyników sprzedaży.</li>
-                    <li>Nadzór nad procesami dostaw oraz przygotowanie ekspozycji kolekcji.</li>
-                    <li>Obsługa spraw reklamacyjnych i bezpośrednia pomoc klientom.</li>
+                    <li>Awanse wewnętrzne od stanowiska sprzedawcy do kierownika salonu.</li>
+                    <li>Zarządzanie całością funkcjonowania sklepu i pracą podległego personelu.</li>
+                    <li>Analiza wyników sprzedaży i pilnowanie realizacji planów budżetowych.</li>
+                    <li>Rekrutowanie personelu oraz przeprowadzanie szkoleń wewnętrznych.</li>
+                    <li>Kontrola dostaw, zamawianie towaru i ekspozycja wg standardów marki.</li>
+                    <li>Profesjonalne rozwiązywanie reklamacji i spraw trudnych.</li>
                 </ul>
             </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
+            <div class="job-card">
+                <div class="job-header">
                     <h3>MATI Firma Handlowa – Sprzedawca</h3>
-                    <span class="exp-date">2004 – 2005</span>
+                    <span class="job-date">2004 – 2005</span>
                 </div>
                 <ul>
-                    <li>Autonomiczne prowadzenie punktu handlowego z odzieżą.</li>
-                    <li>Obsługa gotówkowa i rozliczenia dobowe.</li>
+                    <li>Samodzielne prowadzenie punktu odzieżowego (odpowiedzialność za punkt).</li>
+                    <li>Otwieranie/zamykanie lokalu, bieżące rozliczanie sprzedaży i gotówki.</li>
+                    <li>Dbanie o atrakcyjny wygląd półek oraz estetykę punktu handlowego.</li>
                 </ul>
             </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
-                    <h3>LIDER ZESPOŁU PROMOCYJNEGO</h3>
-                    <span class="exp-date">1999 – 2002</span>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>Lider Zespołu Promocyjnego</h3>
+                    <span class="job-date">1999 – 2002</span>
                 </div>
                 <ul>
-                    <li>Koordynacja projektów promocyjnych i organizacja hostess.</li>
-                    <li>Relacje z przedstawicielami handlowymi oraz raportowanie akcji.</li>
+                    <li>Koordynacja akcji promocyjnych i organizacja eventów handlowych.</li>
+                    <li>Dobór, szkolenie oraz aktywny nadzór nad pracą hostess.</li>
+                    <li>Budowanie relacji z przedstawicielami handlowymi i klientami biznesowymi.</li>
+                    <li>Szczegółowe raportowanie efektów przeprowadzonych akcji promocyjnych.</li>
                 </ul>
             </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
+            <div class="job-card">
+                <div class="job-header">
                     <h3>ORSAY – Sprzedawca</h3>
-                    <span class="exp-date">05.1999 – 11.1999</span>
+                    <span class="job-date">05.1999 – 11.1999</span>
                 </div>
                 <ul>
-                    <li>Profesjonalna obsługa w oparciu o standardy marki.</li>
-                    <li>Przyjmowanie i sprawdzanie dostaw pod kątem ilościowym.</li>
+                    <li>Aktywna pomoc klientom zgodnie z rygorystycznymi standardami obsługi marki.</li>
+                    <li>Przyjmowanie dostaw oraz przygotowanie odzieży do sprzedaży.</li>
+                    <li>Dbanie o porządek w strefie przymierzalni i estetykę salonu.</li>
                 </ul>
             </div>
 
-            <div class="rodo">
+            <h2><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
+
+            <div class="edu-item">
+                <span class="edu-date">2000 – 2001</span>
+                <div class="edu-title">Policealne Studium Menadżerskie „Vademecum”</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></div>
+            </div>
+
+            <div class="edu-item">
+                <span class="edu-date">1997 – 2000</span>
+                <div class="edu-title">Liceum Handlowe dla Pracujących – wydział zaoczny</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>technik handlowiec</strong></div>
+            </div>
+
+            <div class="edu-item" style="border:none;">
+                <span class="edu-date">1992 – 1995</span>
+                <div class="edu-title">Zasadnicza Szkoła Zawodowa</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>sprzedawca</strong></div>
+            </div>
+
+            <div class="rodo-box">
                 Wyrażam zgodę na przetwarzanie moich danych osobowych również na potrzeby przyszłych rekrutacji, zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
             </div>
         </div>
