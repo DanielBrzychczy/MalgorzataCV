@@ -7,31 +7,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --sidebar-navy: #01497c;
+            --sidebar-navy: #013a63;
+            --header-dark: #0a192f;
             --accent-blue: #48cae4;
-            --bg-light: #f1f4f8; /* Delikatne jasne tło */
+            --bg-body: #f0f4f8;
+            --item-bg: #f9fcff;
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: var(--bg-light);
+            background-color: var(--bg-body);
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
         }
 
-        /* NAGŁÓWEK - KRÓTSZY I BEZPIECZNY */
+        /* NAGŁÓWEK - Czysty i profesjonalny */
         header {
-            background: linear-gradient(90deg, #0a192f 0%, #112240 100%);
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
             color: white;
             width: 100%;
-            /* Zmniejszony padding - o ok 20-30% krótszy nagłówek */
-            padding: 30px 0; 
+            padding: 40px 0;
             display: flex;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
         }
 
         .header-content {
@@ -40,6 +43,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
         .header-left {
@@ -48,61 +52,60 @@
             gap: 25px;
         }
 
-        /* ZDJĘCIE - ZAKOTWICZONE I DOPASOWANE */
+        /* ZDJĘCIE KWADRATOWE */
         .header-left img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border-radius: 12px; /* Nowoczesny kwadrat z lekkim łukiem */
             border: 3px solid var(--accent-blue);
             object-fit: cover;
             background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .header-left h1 {
             font-size: 2.5em;
             margin: 0;
-            line-height: 1.1;
+            line-height: 1.2;
+            font-weight: 700;
         }
 
         .contact-info {
             text-align: right;
-            font-size: 0.9em;
-            line-height: 1.5;
+            font-size: 0.95em;
+            line-height: 1.8;
         }
 
         .contact-info span {
             display: block;
-            margin-bottom: 2px;
         }
 
         .contact-info i {
-            margin-left: 8px;
+            margin-left: 10px;
             color: var(--accent-blue);
             width: 20px;
             text-align: center;
         }
 
-        /* GŁÓWNA KARTA CV - ZERO NACHODZENIA (naturalny odstęp) */
+        /* GŁÓWNA TREŚĆ - BRAK NACHODZENIA */
         .main-container {
             display: grid;
-            grid-template-columns: 330px 1fr;
+            grid-template-columns: 350px 1fr;
             gap: 30px;
             width: 90%;
             max-width: 1200px;
             background: white;
-            /* ZERO MARGINESU UJEMNEGO = BRAK BŁĘDÓW */
-            margin-top: 30px; 
-            margin-bottom: 50px;
+            margin: 30px 0 60px 0; /* Naturalny odstęp pod nagłówkiem */
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* LEWA KOLUMNA (Panel boczny) */
+        /* LEWA KOLUMNA */
         .left-column {
             background-color: var(--sidebar-navy);
             color: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 8px;
             height: fit-content;
         }
@@ -110,25 +113,25 @@
         .left-column h2 {
             border-bottom: 2px solid var(--accent-blue);
             padding-bottom: 10px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 1.2em;
+            margin: 0 0 20px 0;
+            font-size: 1.3em;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .left-column ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .left-column ul li {
-            margin-bottom: 12px;
-            line-height: 1.4;
+            margin-bottom: 15px;
+            line-height: 1.5;
             position: relative;
-            padding-left: 20px;
-            font-size: 0.85em;
+            padding-left: 25px;
+            font-size: 0.9em;
         }
 
         .left-column ul li::before {
@@ -141,69 +144,92 @@
         }
 
         /* PRAWA KOLUMNA */
-        .right-column {
-            padding-left: 5px;
-        }
-
         .right-column h2 {
             color: #012a4a;
             border-bottom: 2px solid #012a4a;
             padding-bottom: 8px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-size: 1.4em;
+            margin: 0 0 25px 0;
+            font-size: 1.5em;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .item {
-            background-color: #f8fbff;
+        .job-card {
+            background-color: var(--item-bg);
             border: 1px solid #e1e9f1;
             border-left: 6px solid var(--sidebar-navy);
-            padding: 18px 20px;
-            margin-bottom: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
             border-radius: 4px;
             position: relative;
         }
 
-        .item h3 {
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .job-header h3 {
             margin: 0;
             color: #012a4a;
             font-size: 1.15em;
-            margin-bottom: 8px;
+            max-width: 75%;
         }
 
-        .date-badge {
-            position: absolute;
-            top: 18px;
-            right: 20px;
+        .job-date {
             font-weight: bold;
             color: var(--sidebar-navy);
             font-size: 0.85em;
+            background: #eef5ff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
         }
 
-        .item p {
-            margin: 5px 0;
-            font-size: 0.9em;
-            color: #333;
-            line-height: 1.4;
+        .job-card ul {
+            margin: 10px 0 0 0;
+            padding-left: 18px;
         }
+
+        .job-card ul li {
+            margin-bottom: 6px;
+            font-size: 0.92em;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        /* WYKSZTAŁCENIE */
+        .edu-item {
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .edu-item:last-child { border: none; }
+
+        .edu-title { font-weight: bold; color: #012a4a; font-size: 1.05em; margin-bottom: 3px;}
+        .edu-date { color: #013a63; font-weight: bold; font-size: 0.9em; margin-bottom: 3px; display: block;}
+        .edu-desc { font-size: 0.9em; color: #555;}
 
         .rodo-box {
             margin-top: 40px;
-            font-size: 0.7em;
-            color: #777;
+            font-size: 0.72em;
+            color: #888;
             border-top: 1px solid #eee;
-            padding-top: 15px;
+            padding-top: 20px;
             text-align: justify;
         }
 
-        @media (max-width: 950px) {
+        @media (max-width: 1000px) {
             .header-content { flex-direction: column; text-align: center; }
-            .contact-info { text-align: center; margin-top: 15px; }
+            .header-left { flex-direction: column; }
+            .contact-info { text-align: center; }
             .main-container { grid-template-columns: 1fr; margin-top: 20px; }
-            .date-badge { position: static; display: block; margin-bottom: 10px; }
+            .job-header { flex-direction: column; gap: 10px; }
+            .job-header h3 { max-width: 100%; }
         }
     </style>
 </head>
@@ -212,8 +238,10 @@
     <header>
         <div class="header-content">
             <div class="header-left">
-                <img src="twoje-zdjecie.jpg" alt="Zdjęcie Małgorzaty">
-                <h1>Małgorzata <br> Fryzowicz Brzychczy</h1>
+                <img src="twoje-zdjecie.jpg" alt="Małgorzata Fryzowicz Brzychczy">
+                <div>
+                    <h1>Małgorzata<br>Fryzowicz Brzychczy</h1>
+                </div>
             </div>
             <div class="contact-info">
                 <span>(+48) 602 572 527 <i class="fas fa-phone"></i></span>
@@ -226,80 +254,135 @@
 
     <div class="main-container">
         
+        <!-- KOLUMNA LEWA -->
         <div class="left-column">
-            <h2><i class="fas fa-check"></i> Umiejętności</h2>
+            <h2><i class="fas fa-lightbulb"></i> Umiejętności</h2>
             <ul>
-                <li>Zaprezentowanie i reklama asortymentu</li>
-                <li>Umiejętność pracy w zespole</li>
-                <li>Odporność na stres i praca pod presją czasu</li>
-                <li>Visual Merchandising</li>
                 <li>Profesjonalna obsługa klienta detalicznego</li>
+                <li>Doradztwo przy wyborze produktów</li>
+                <li>Zaawansowany Visual Merchandising</li>
+                <li>Zarządzanie zespołem i liderskie podejście</li>
+                <li>Dbanie o nienaganny wizerunek salonu</li>
+                <li>Praca pod presją czasu i odporność na stres</li>
             </ul>
 
-            <h2 style="margin-top: 30px;"><i class="fas fa-medal"></i> Atuty</h2>
+            <h2 style="margin-top: 40px;"><i class="fas fa-award"></i> Atuty</h2>
             <ul>
+                <li>Uczciwość i pełna rzetelność</li>
+                <li>Wysoka dyspozycyjność</li>
+                <li>Punktualność i sumienność</li>
+                <li>Bezkonfliktowość i lojalność zawodowa</li>
+                <li>Brak nałogów</li>
                 <li>Kurs obsługi klienta (SLG International)</li>
-                <li>Prawo jazdy kategoria B</li>
-                <li>Uczciwość i sumienność</li>
-                <li>Pełna dyspozycyjność</li>
-                <li>Wysoka kultura osobista i bezkonfliktowość</li>
-                <li>Lojalność zawodowa</li>
+                <li>Prawo jazdy kat. B</li>
             </ul>
 
-            <h2 style="margin-top: 30px;"><i class="fas fa-globe"></i> Języki</h2>
+            <h2 style="margin-top: 40px;"><i class="fas fa-globe"></i> Języki</h2>
             <ul>
                 <li>Język polski - ojczysty</li>
             </ul>
         </div>
 
+        <!-- KOLUMNA PRAWA -->
         <div class="right-column">
             <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
 
-            <div class="item">
-                <span class="date-badge">2012 – Nadal</span>
-                <h3>Reporter Young – Sprzedawca</h3>
-                <p>• Profesjonalna obsługa i doradztwo dla klienta.</p>
-                <p>• Odpowiedzialność za dbałość o standardy wizualne sklepu.</p>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>Reporter Young – Sprzedawca</h3>
+                    <span class="job-date">2012 – Nadal</span>
+                </div>
+                <ul>
+                    <li>Doradztwo przy wyborze produktów i profesjonalna pomoc klientom w zakupach.</li>
+                    <li>Samodzielna organizacja pracy salonu i dbanie o bieżące sprawy sklepu.</li>
+                    <li>Układanie towaru oraz dbanie o estetyczny wygląd witryn (Visual Merchandising).</li>
+                    <li>Efektywna współpraca z zespołem oraz dbanie o bezpieczeństwo towaru.</li>
+                </ul>
             </div>
 
-            <div class="item">
-                <span class="date-badge">2011 – 2012</span>
-                <h3>BRANDBQ Sp. z o.o. – Kierownik sklepu</h3>
-                <p>• Zarządzanie personelem, organizacja pracy i grafików.</p>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>BRANDBQ Sp. z o.o. – Kierownik Sklepu</h3>
+                    <span class="job-date">2011 – 2012</span>
+                </div>
+                <ul>
+                    <li>Prowadzenie zespołu: planowanie grafików, delegowanie i egzekwowanie zadań.</li>
+                    <li>Wdrażanie nowych pracowników w zakresie obsługi klienta i standardów marki.</li>
+                    <li>Odpowiedzialność za wynik finansowy, raportowanie i stany magazynowe.</li>
+                    <li>Nadzór nad zaopatrzeniem i odpowiednią prezentacją aktualnych kolekcji.</li>
+                </ul>
             </div>
 
-            <div class="item">
-                <span class="date-badge">2005 – 2010</span>
-                <h3>REPORTER – Ścieżka awansu</h3>
-                <p>• <b>2010:</b> Kierownik sklepu</p>
-                <p>• <b>2008-2010:</b> Zastępca kierownika</p>
-                <p>• <b>2005-2008:</b> Sprzedawca</p>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>REPORTER – Kierownik / Zastępca / Sprzedawca</h3>
+                    <span class="job-date">2005 – 2010</span>
+                </div>
+                <ul>
+                    <li>Awanse wewnętrzne od stanowiska sprzedawcy do kierownika salonu.</li>
+                    <li>Zarządzanie całością funkcjonowania sklepu i pracą podległego personelu.</li>
+                    <li>Analiza wyników sprzedaży i pilnowanie realizacji planów budżetowych.</li>
+                    <li>Rekrutowanie personelu oraz przeprowadzanie szkoleń wewnętrznych.</li>
+                    <li>Kontrola dostaw, zamawianie towaru i ekspozycja wg standardów marki.</li>
+                    <li>Profesjonalne rozwiązywanie reklamacji i spraw trudnych.</li>
+                </ul>
             </div>
 
-            <div class="item">
-                <span class="date-badge">2004 – 2005</span>
-                <h3>MATI Firma Handlowa – Sprzedawca</h3>
-                <p>• Samodzielne prowadzenie sklepu z odzieżą.</p>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>MATI Firma Handlowa – Sprzedawca</h3>
+                    <span class="job-date">2004 – 2005</span>
+                </div>
+                <ul>
+                    <li>Samodzielne prowadzenie punktu odzieżowego (odpowiedzialność za punkt).</li>
+                    <li>Otwieranie/zamykanie lokalu, bieżące rozliczanie sprzedaży i gotówki.</li>
+                    <li>Dbanie o atrakcyjny wygląd półek oraz estetykę punktu handlowego.</li>
+                </ul>
             </div>
 
-            <div class="item">
-                <span class="date-badge">1999 – 2002</span>
-                <h3>Lider zespołu promocyjnego</h3>
-                <p>• Szkolenie personelu oraz nadzór nad akcjami promocyjnymi.</p>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>Lider Zespołu Promocyjnego</h3>
+                    <span class="job-date">1999 – 2002</span>
+                </div>
+                <ul>
+                    <li>Koordynacja akcji promocyjnych i organizacja eventów handlowych.</li>
+                    <li>Dobór, szkolenie oraz aktywny nadzór nad pracą hostess.</li>
+                    <li>Budowanie relacji z przedstawicielami handlowymi i klientami biznesowymi.</li>
+                    <li>Szczegółowe raportowanie efektów przeprowadzonych akcji promocyjnych.</li>
+                </ul>
             </div>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
-
-            <div class="item">
-                <span class="date-badge">2000 – 2001</span>
-                <h3>Studium Menadżerskie „Vademecum”</h3>
-                <p>Technik marketingu i reklamy</p>
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>ORSAY – Sprzedawca</h3>
+                    <span class="job-date">05.1999 – 11.1999</span>
+                </div>
+                <ul>
+                    <li>Aktywna pomoc klientom zgodnie z rygorystycznymi standardami obsługi marki.</li>
+                    <li>Przyjmowanie dostaw oraz przygotowanie odzieży do sprzedaży.</li>
+                    <li>Dbanie o porządek w strefie przymierzalni i estetykę salonu.</li>
+                </ul>
             </div>
 
-            <div class="item">
-                <span class="date-badge">1997 – 2000</span>
-                <h3>Liceum Handlowe dla Pracujących</h3>
-                <p>Technik – handlowiec</p>
+            <h2><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
+
+            <div class="edu-item">
+                <span class="edu-date">2000 – 2001</span>
+                <div class="edu-title">Policealne Studium Menadżerskie „Vademecum”</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></div>
+            </div>
+
+            <div class="edu-item">
+                <span class="edu-date">1997 – 2000</span>
+                <div class="edu-title">Liceum Handlowe dla Pracujących – wydział zaoczny</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>technik handlowiec</strong></div>
+            </div>
+
+            <div class="edu-item" style="border:none;">
+                <span class="edu-date">1992 – 1995</span>
+                <div class="edu-title">Zasadnicza Szkoła Zawodowa</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>sprzedawca</strong></div>
             </div>
 
             <div class="rodo-box">
