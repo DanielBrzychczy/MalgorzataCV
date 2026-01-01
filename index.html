@@ -9,7 +9,7 @@
         :root {
             --sidebar-navy: #01497c;
             --accent-blue: #48cae4;
-            --bg-light: #e0f2f1;
+            --bg-light: #f1f4f8; /* Delikatne jasne tło */
         }
 
         body {
@@ -22,105 +22,100 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* NAGŁÓWEK - FIXED SPACE */
+        /* NAGŁÓWEK - KRÓTSZY I BEZPIECZNY */
         header {
             background: linear-gradient(90deg, #0a192f 0%, #112240 100%);
             color: white;
             width: 100%;
-            /* Zwiększyłem padding dolny (130px), aby stworzyć bezpieczną strefę pod tekstem */
-            padding: 40px 0 130px 0; 
+            /* Zmniejszony padding - o ok 20-30% krótszy nagłówek */
+            padding: 30px 0; 
             display: flex;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         .header-content {
             width: 90%;
-            max-width: 1250px;
+            max-width: 1200px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* To jest nasza kotwica - nie pozwala karcie zbliżyć się do tekstu */
-            padding-bottom: 20px; 
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
         }
 
+        /* ZDJĘCIE - ZAKOTWICZONE I DOPASOWANE */
         .header-left img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 4px solid var(--accent-blue);
+            border: 3px solid var(--accent-blue);
             object-fit: cover;
             background: white;
-            flex-shrink: 0; /* Chroni zdjęcie przed zgnieceniem */
         }
 
         .header-left h1 {
-            font-size: 2.8em;
+            font-size: 2.5em;
             margin: 0;
             line-height: 1.1;
         }
 
         .contact-info {
             text-align: right;
-            font-size: 0.95em;
-            line-height: 1.6;
-            min-width: 250px;
+            font-size: 0.9em;
+            line-height: 1.5;
         }
 
         .contact-info span {
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .contact-info i {
-            margin-left: 10px;
+            margin-left: 8px;
             color: var(--accent-blue);
             width: 20px;
             text-align: center;
         }
 
-        /* GŁÓWNA KARTA CV - POPRAWIONE NACHODZENIE */
+        /* GŁÓWNA KARTA CV - ZERO NACHODZENIA (naturalny odstęp) */
         .main-container {
             display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 40px;
+            grid-template-columns: 330px 1fr;
+            gap: 30px;
             width: 90%;
-            max-width: 1250px;
+            max-width: 1200px;
             background: white;
-            /* Zmniejszyłem margines ujemny do -70px przy dużym paddingu headera (130px) */
-            /* Daje to ok. 60px (130-70) "czystego marginesu" od Twoich danych */
-            margin-top: -70px; 
-            margin-bottom: 60px;
+            /* ZERO MARGINESU UJEMNEGO = BRAK BŁĘDÓW */
+            margin-top: 30px; 
+            margin-bottom: 50px;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            z-index: 10;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        /* LEWA KOLUMNA */
+        /* LEWA KOLUMNA (Panel boczny) */
         .left-column {
             background-color: var(--sidebar-navy);
             color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 8px;
             height: fit-content;
         }
 
         .left-column h2 {
             border-bottom: 2px solid var(--accent-blue);
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             margin-top: 0;
-            margin-bottom: 25px;
-            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-size: 1.2em;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .left-column ul {
@@ -129,11 +124,11 @@
         }
 
         .left-column ul li {
-            margin-bottom: 14px;
-            line-height: 1.5;
+            margin-bottom: 12px;
+            line-height: 1.4;
             position: relative;
-            padding-left: 25px;
-            font-size: 0.9em;
+            padding-left: 20px;
+            font-size: 0.85em;
         }
 
         .left-column ul li::before {
@@ -143,76 +138,72 @@
             position: absolute;
             left: 0;
             color: var(--accent-blue);
-            font-size: 0.8em;
         }
 
         /* PRAWA KOLUMNA */
         .right-column {
-            padding: 0 5px;
+            padding-left: 5px;
         }
 
         .right-column h2 {
             color: #012a4a;
             border-bottom: 2px solid #012a4a;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             margin-top: 0;
             margin-bottom: 25px;
+            font-size: 1.4em;
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 1.5em;
         }
 
-        .experience-item, .education-item {
+        .item {
             background-color: #f8fbff;
-            border: 1px solid #e1eef9;
+            border: 1px solid #e1e9f1;
             border-left: 6px solid var(--sidebar-navy);
-            padding: 20px;
-            margin-bottom: 18px;
+            padding: 18px 20px;
+            margin-bottom: 15px;
             border-radius: 4px;
             position: relative;
         }
 
-        .experience-item h3 {
-            margin: 0 0 10px 0;
+        .item h3 {
+            margin: 0;
             color: #012a4a;
-            font-size: 1.2em;
-            padding-right: 120px;
+            font-size: 1.15em;
+            margin-bottom: 8px;
         }
 
         .date-badge {
             position: absolute;
-            top: 20px;
+            top: 18px;
             right: 20px;
             font-weight: bold;
             color: var(--sidebar-navy);
-            background: #eef5ff;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
+            font-size: 0.85em;
         }
 
-        .experience-item p {
-            margin: 6px 0;
-            font-size: 0.95em;
+        .item p {
+            margin: 5px 0;
+            font-size: 0.9em;
             color: #333;
+            line-height: 1.4;
         }
 
         .rodo-box {
             margin-top: 40px;
-            font-size: 0.75em;
+            font-size: 0.7em;
             color: #777;
             border-top: 1px solid #eee;
             padding-top: 15px;
             text-align: justify;
         }
 
-        @media (max-width: 1000px) {
-            header { padding: 40px 0 60px 0; }
-            .header-content { flex-direction: column; text-align: center; padding-bottom: 40px;}
-            .main-container { grid-template-columns: 1fr; margin-top: -30px; }
-            .date-badge { position: static; display: inline-block; margin-bottom: 10px; }
-            .experience-item h3 { padding-right: 0; }
+        @media (max-width: 950px) {
+            .header-content { flex-direction: column; text-align: center; }
+            .contact-info { text-align: center; margin-top: 15px; }
+            .main-container { grid-template-columns: 1fr; margin-top: 20px; }
+            .date-badge { position: static; display: block; margin-bottom: 10px; }
         }
     </style>
 </head>
@@ -240,22 +231,22 @@
             <ul>
                 <li>Zaprezentowanie i reklama asortymentu</li>
                 <li>Umiejętność pracy w zespole</li>
-                <li>Praca pod presją czasu</li>
+                <li>Odporność na stres i praca pod presją czasu</li>
                 <li>Visual Merchandising</li>
-                <li>Obsługa klienta detalicznego</li>
+                <li>Profesjonalna obsługa klienta detalicznego</li>
             </ul>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-medal"></i> Atuty</h2>
+            <h2 style="margin-top: 30px;"><i class="fas fa-medal"></i> Atuty</h2>
             <ul>
                 <li>Kurs obsługi klienta (SLG International)</li>
                 <li>Prawo jazdy kategoria B</li>
                 <li>Uczciwość i sumienność</li>
                 <li>Pełna dyspozycyjność</li>
-                <li>Brak nałogów</li>
-                <li>Bezkonfliktowość i lojalność</li>
+                <li>Wysoka kultura osobista i bezkonfliktowość</li>
+                <li>Lojalność zawodowa</li>
             </ul>
 
-            <h2 style="margin-top: 40px;"><i class="fas fa-language"></i> Języki</h2>
+            <h2 style="margin-top: 30px;"><i class="fas fa-globe"></i> Języki</h2>
             <ul>
                 <li>Język polski - ojczysty</li>
             </ul>
@@ -264,46 +255,51 @@
         <div class="right-column">
             <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
 
-            <div class="experience-item">
+            <div class="item">
                 <span class="date-badge">2012 – Nadal</span>
                 <h3>Reporter Young – Sprzedawca</h3>
-                <p>• Aktywna obsługa klienta i doradztwo w zakupach.</p>
-                <p>• Przygotowanie i dbałość o estetyczną ekspozycję towaru.</p>
-                <p>• Praca w pełnym zakresie odpowiedzialności za sklep.</p>
+                <p>• Profesjonalna obsługa i doradztwo dla klienta.</p>
+                <p>• Odpowiedzialność za dbałość o standardy wizualne sklepu.</p>
             </div>
 
-            <div class="experience-item">
+            <div class="item">
                 <span class="date-badge">2011 – 2012</span>
                 <h3>BRANDBQ Sp. z o.o. – Kierownik sklepu</h3>
-                <p>• Zarządzanie personelem i organizowanie pracy salonu.</p>
+                <p>• Zarządzanie personelem, organizacja pracy i grafików.</p>
             </div>
 
-            <div class="experience-item">
+            <div class="item">
                 <span class="date-badge">2005 – 2010</span>
-                <h3>REPORTER – Ścieżka rozwoju</h3>
+                <h3>REPORTER – Ścieżka awansu</h3>
                 <p>• <b>2010:</b> Kierownik sklepu</p>
-                <p>• <b>2008 – 2010:</b> Zastępca kierownika</p>
-                <p>• <b>2005 – 2008:</b> Sprzedawca</p>
+                <p>• <b>2008-2010:</b> Zastępca kierownika</p>
+                <p>• <b>2005-2008:</b> Sprzedawca</p>
             </div>
 
-            <div class="experience-item">
+            <div class="item">
                 <span class="date-badge">2004 – 2005</span>
                 <h3>MATI Firma Handlowa – Sprzedawca</h3>
-                <p>• Samodzielne prowadzenie sklepu odzieżowego.</p>
+                <p>• Samodzielne prowadzenie sklepu z odzieżą.</p>
             </div>
 
-            <h2 style="margin-top: 30px;"><i class="fas fa-university"></i> Wykształcenie</h2>
+            <div class="item">
+                <span class="date-badge">1999 – 2002</span>
+                <h3>Lider zespołu promocyjnego</h3>
+                <p>• Szkolenie personelu oraz nadzór nad akcjami promocyjnymi.</p>
+            </div>
 
-            <div class="education-item">
+            <h2 style="margin-top: 40px;"><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
+
+            <div class="item">
                 <span class="date-badge">2000 – 2001</span>
                 <h3>Studium Menadżerskie „Vademecum”</h3>
-                <p>Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></p>
+                <p>Technik marketingu i reklamy</p>
             </div>
 
-            <div class="education-item">
+            <div class="item">
                 <span class="date-badge">1997 – 2000</span>
                 <h3>Liceum Handlowe dla Pracujących</h3>
-                <p>Tytuł zawodowy: <strong>technik – handlowiec</strong></p>
+                <p>Technik – handlowiec</p>
             </div>
 
             <div class="rodo-box">
