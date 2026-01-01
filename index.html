@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Małgorzata Fryzowicz Brzychczy - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background: #f0f4f8; /* Jasnoniebieskie tło strony */
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease-in-out;
+            padding-top: 140px;
+            position: relative;
+        }
+
+        body:hover {
+            background-color: #e1e9f1;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin-top: 50px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease-in-out;
+            margin-bottom: 50px;
+        }
+
+        header {
+            background: #0277bd; /* Profesjonalny niebieski */
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin: 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .header-left .image-container {
+            width: 130px;
+            height: 130px;
+            border-radius: 10%; /* Kwadratowy z lekkim zaokrągleniem pasuje do profilu manager/sprzedawca */
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid #e1f5fe;
+            background: white;
+        }
+
+        .header-left .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            padding-right: 40px;
+        }
+
+        .contact span {
+            display: flex;
+            align-items: center;
+            margin: 3px 0;
+            font-size: 0.95em;
+        }
+
+        .contact span i {
+            margin-right: 10px;
+            width: 20px;
+            color: #e1f5fe;
+        }
+
+        .left-column {
+            padding: 25px;
+            background: #01579b; /* Ciemniejszy niebieski */
+            color: white;
+            border-radius: 10px;
+        }
+
+        .left-column h2 {
+            color: white;
+            border-bottom: 2px solid #4fc3f7;
+            padding-bottom: 5px;
+            font-size: 1.3em;
+            margin-top: 30px;
+        }
+
+        .left-column ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .left-column ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .left-column ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #4fc3f7;
+        }
+
+        .right-column {
+            padding: 10px;
+        }
+
+        h2 {
+            color: #0277bd;
+            border-bottom: 2px solid #0277bd;
+            padding-bottom: 5px;
+        }
+
+        .experience, .education {
+            background: #f1f8fe;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid #0277bd;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .date {
+            font-weight: bold;
+            color: #01579b;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .experience p {
+            margin: 4px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-rodo {
+            margin-top: 30px;
+            font-size: 0.75em;
+            color: #666;
+            text-align: justify;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            header { position: relative; flex-direction: column; text-align: center; height: auto; padding: 20px 0;}
+            body { padding-top: 0; }
+            .header-left { flex-direction: column; padding-left: 0; }
+            .contact { padding-right: 0; align-items: center; margin-top: 15px; }
+            .header-left .image-container { margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <div class="image-container">
+                <!-- Tu wstaw plik ze zdjęciem -->
+                <img src="malgorzata_foto.jpg" alt="Małgorzata Fryzowicz Brzychczy">
+            </div>
+            <h1>Małgorzata <br> Fryzowicz Brzychczy</h1>
+        </div>
+        <div class="contact">
+            <span><i class="fas fa-phone"></i> 602-572-527</span>
+            <span><i class="fas fa-envelope"></i> goniabrzychczy@wp.pl</span>
+            <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, 31-808 Kraków</span>
+            <span><i class="fas fa-calendar"></i> Ur. 09.03.1978 r.</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- LEWA KOLUMNA: DANE I UMIEJĘTNOŚCI -->
+        <div class="left-column">
+            <h2><i class="fas fa-user"></i> Dane osobowe</h2>
+            <ul>
+                <li><strong>Stan cywilny:</strong> mężatka</li>
+            </ul>
+
+            <h2><i class="fas fa-star"></i> Umiejętności</h2>
+            <ul>
+                <li>Zaprezentowanie i reklama asortymentu</li>
+                <li>Praca w zespole</li>
+                <li>Praca pod presją czasu</li>
+                <li>Zaawansowany Visual Merchandising</li>
+            </ul>
+
+            <h2><i class="fas fa-award"></i> Osiągnięcia i atuty</h2>
+            <ul>
+                <li>Kurs obsługi klienta (SLG International Trading Center)</li>
+                <li>Prawo jazdy kategoria B</li>
+                <li>Uczciwość</li>
+                <li>Sumienność</li>
+                <li>Dyspozycyjność</li>
+                <li>Bez nałogów</li>
+                <li>Bezkonfliktowość</li>
+                <li>Lojalność</li>
+            </ul>
+            
+            <h2 style="margin-top:40px;"><i class="fas fa-language"></i> Języki</h2>
+            <ul>
+                <li>Polski (ojczysty)</li>
+            </ul>
+        </div>
+
+        <!-- PRAWA KOLUMNA: DOŚWIADCZENIE I EDUKACJA -->
+        <div class="right-column">
+            <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
+            
+            <div class="experience">
+                <span class="date">2012 – Nadal</span>
+                <div class="job-title">Reporter Young – Sprzedawca</div>
+                <p>● Intensywna praca z klientem</p>
+                <p>● Praca zespołowa</p>
+                <p>● Praca bez koordynacji kierowniczej – pełny zakres obowiązków</p>
+            </div>
+
+            <div class="experience">
+                <span class="date">2011 – 2012</span>
+                <div class="job-title">BRANDBQ Sp. z o.o. – Kierownik sklepu</div>
+                <p>● Szkolenie personelu</p>
+                <p>● Dbałość o wizerunek i mienie firmy</p>
+                <p>● Profesjonalna obsługa klienta</p>
+            </div>
+
+            <div class="experience">
+                <span class="date">2005 – 2010</span>
+                <div class="job-title">REPORTER – Kierownik / Sprzedawca</div>
+                <p><i>Zajmowane stanowiska:</i></p>
+                <p>● <b>16.01.2010 – 23.10.2010:</b> Kierownik sklepu</p>
+                <p>● <b>01.11.2008 – 15.01.2010:</b> Zastępca kierownika sklepu</p>
+                <p>● <b>14.03.2005 – 31.10.2008:</b> Sprzedawca</p>
+            </div>
+
+            <div class="experience">
+                <span class="date">2004 – 2005</span>
+                <div class="job-title">MATI Firma Handlowa – Sprzedawca</div>
+                <p>● Samodzielne prowadzenie sklepu z odzieżą</p>
+            </div>
+
+            <div class="experience">
+                <span class="date">1999 – 2002</span>
+                <div class="job-title">Firmy Handlowe – Lider zespołu promocyjnego</div>
+                <p>● Nadzór nad organizacją promocji</p>
+                <p>● Dobór, szkolenie oraz nadzorowanie hostess</p>
+                <p>● Współpraca z przedstawicielami handlowymi</p>
+            </div>
+
+            <div class="experience">
+                <span class="date">05.1999 – 11.1999</span>
+                <div class="job-title">ORSAY – Sprzedawca</div>
+                <p>● Zamawianie i sprzedaż towaru, indywidualna obsługa klienta</p>
+            </div>
+
+            <div class="experience">
+                <span class="date">1992 – 1995</span>
+                <div class="job-title">PSS SPOŁEM – Pracownik młodociany (Sprzedawca)</div>
+                <p>● Okres szkoleniowy w zawodzie sprzedawca</p>
+            </div>
+
+            <h2><i class="fas fa-university"></i> Wykształcenie</h2>
+            
+            <div class="education">
+                <span class="date">2000 – 2001</span>
+                <strong>Policealne Studium Menadżerskie „Vademecum”</strong>
+                <p>Tytuł zawodowy: <b>technik marketingu i reklamy</b></p>
+            </div>
+
+            <div class="education">
+                <span class="date">1997 – 2000</span>
+                <strong>Liceum Handlowe dla Pracujących (Wydział zaoczny)</strong>
+                <p>Tytuł zawodowy: <b>technik – handlowiec</b></p>
+            </div>
+
+            <div class="education">
+                <span class="date">1992 – 1995</span>
+                <strong>Zasadnicza Szkoła Zawodowa</strong>
+                <p>Tytuł zawodowy: <b>sprzedawca</b></p>
+            </div>
+
+            <div class="footer-rodo">
+                Wyrażam zgodę na przetwarzanie moich danych osobowych również na potrzeby przyszłych rekrutacji, zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
+            </div>
+        </div>
+    </div>
+</body>
+</html>
