@@ -201,18 +201,18 @@
             color: #444;
         }
 
-        /* WYKSZTAŁCENIE */
+        /* WYKSZTAŁCENIE W SIDEBARZE */
         .edu-item {
             margin-bottom: 15px;
             padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .edu-item:last-child { border: none; }
+        .left-column .edu-item:last-child { border: none; }
 
-        .edu-title { font-weight: bold; color: #012a4a; font-size: 1.05em; margin-bottom: 3px;}
-        .edu-date { color: #013a63; font-weight: bold; font-size: 0.9em; margin-bottom: 3px; display: block;}
-        .edu-desc { font-size: 0.9em; color: #555;}
+        .left-column .edu-title { font-weight: bold; color: var(--accent-blue); font-size: 1.05em; margin-bottom: 3px;}
+        .left-column .edu-date { color: #fff; font-weight: bold; font-size: 0.9em; margin-bottom: 3px; display: block;}
+        .left-column .edu-desc { font-size: 0.9em; color: #ddd;}
 
         .rodo-box {
             margin-top: 40px;
@@ -281,6 +281,27 @@
             <ul>
                 <li>Język polski - ojczysty</li>
             </ul>
+
+            <!-- PRZENIESIONE WYKSZTAŁCENIE -->
+            <h2 style="margin-top: 40px;"><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
+
+            <div class="edu-item">
+                <span class="edu-date">2000 – 2001</span>
+                <div class="edu-title">Policealne Studium Menadżerskie „Vademecum”</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></div>
+            </div>
+
+            <div class="edu-item">
+                <span class="edu-date">1997 – 2000</span>
+                <div class="edu-title">Liceum Handlowe dla Pracujących – wydział zaoczny</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>technik handlowiec</strong></div>
+            </div>
+
+            <div class="edu-item">
+                <span class="edu-date">1992 – 1995</span>
+                <div class="edu-title">Zasadnicza Szkoła Zawodowa</div>
+                <div class="edu-desc">Tytuł zawodowy: <strong>sprzedawca</strong></div>
+            </div>
         </div>
 
         <!-- KOLUMNA PRAWA -->
@@ -307,7 +328,7 @@
                 </div>
                 <ul>
                     <li>Prowadzenie zespołu: planowanie grafików, delegowanie i egzekwowanie zadań.</li>
-                    <li>Wdrażanie nowych pracowników w zakresie obsługi klienta i standardów marki.</li>
+                    <li>Wdrażanie nowych pracowników v zakresie obsługi klienta i standardów marki.</li>
                     <li>Odpowiedzialność za wynik finansowy, raportowanie i stany magazynowe.</li>
                     <li>Nadzór nad zaopatrzeniem i odpowiednią prezentacją aktualnych kolekcji.</li>
                 </ul>
@@ -363,26 +384,6 @@
                     <li>Przyjmowanie dostaw oraz przygotowanie odzieży do sprzedaży.</li>
                     <li>Dbanie o porządek w strefie przymierzalni i estetykę salonu.</li>
                 </ul>
-            </div>
-
-            <h2><i class="fas fa-graduation-cap"></i> Wykształcenie</h2>
-
-            <div class="edu-item">
-                <span class="edu-date">2000 – 2001</span>
-                <div class="edu-title">Policealne Studium Menadżerskie „Vademecum”</div>
-                <div class="edu-desc">Tytuł zawodowy: <strong>technik marketingu i reklamy</strong></div>
-            </div>
-
-            <div class="edu-item">
-                <span class="edu-date">1997 – 2000</span>
-                <div class="edu-title">Liceum Handlowe dla Pracujących – wydział zaoczny</div>
-                <div class="edu-desc">Tytuł zawodowy: <strong>technik handlowiec</strong></div>
-            </div>
-
-            <div class="edu-item" style="border:none;">
-                <span class="edu-date">1992 – 1995</span>
-                <div class="edu-title">Zasadnicza Szkoła Zawodowa</div>
-                <div class="edu-desc">Tytuł zawodowy: <strong>sprzedawca</strong></div>
             </div>
 
             <div class="rodo-box">
