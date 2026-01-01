@@ -101,7 +101,6 @@
             background-color: var(--sidebar-navy);
             color: white;
             padding: 40px 30px;
-            /* Usunięte height: fit-content pozwala na rozciągnięcie do dołu grid-a */
         }
 
         .left-column h2 {
@@ -124,16 +123,19 @@
             margin-bottom: 15px;
             line-height: 1.5;
             position: relative;
-            padding-left: 25px;
+            padding-left: 22px; /* Zmniejszone dla mniejszych kropek */
             font-size: 0.9em;
         }
 
+        /* STYLIZACJA KROPEK ZAMIAST PTASZKÓW */
         .left-column ul li::before {
-            content: "\f00c";
+            content: "\f111"; /* Ikona kropki z Font Awesome */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
             left: 0;
+            top: 5px; /* Wyśrodkowanie kropki względem linii tekstu */
+            font-size: 0.6em; /* Mniejsza, subtelniejsza kropka */
             color: var(--accent-blue);
         }
 
@@ -265,10 +267,9 @@
 
             <h2 style="margin-top: 40px;"><i class="fas fa-award"></i> Atuty</h2>
             <ul>
-                <li>Kurs obsługi klienta – zorganizowany przez SLG International Trading Center</li>
+                <li>Kurs obsługi klienta – SLG International</li>
                 <li>Uczciwość i rzetelność</li>
-                <li>Sumienność</li>
-                <li>Dyspozycyjność</li>
+                <li>Sumienność i dyspozycyjność</li>
                 <li>Bezkonfliktowość</li>
                 <li>Lojalność zawodowa</li>
                 <li>Prawo jazdy kat. B</li>
@@ -283,7 +284,7 @@
 
             <div class="edu-item">
                 <span class="edu-date">1997 – 2000</span>
-                <div class="edu-title">Liceum Handlowe dla Pracujących – wydział zaoczny</div>
+                <div class="edu-title">Liceum Handlowe dla Pracujących</div>
                 <div class="edu-desc">Tytuł zawodowy: <strong>technik handlowiec</strong></div>
             </div>
 
@@ -300,7 +301,7 @@
             <div class="job-card">
                 <div class="job-header">
                     <h3>Reporter Young – Sprzedawca</h3>
-                    <span class="job-date">2012 – 31.03.2026</span>
+                    <span class="job-date">2012 – Obecnie</span>
                 </div>
                 <span class="job-tagline">Praca bez koordynacji kierowniczej</span>
                 <ul>
@@ -334,7 +335,6 @@
                     <li>Zarządzanie całością funkcjonowania sklepu i pracą zespołu.</li>
                     <li>Analiza wyników sprzedaży i pilnowanie realizacji planów budżetowych.</li>
                     <li>Rekrutowanie personelu oraz przeprowadzanie szkoleń wewnętrznych.</li>
-                    <li>Kontrola dostaw, zamawianie towaru i ekspozycja wg standardów marki.</li>
                 </ul>
             </div>
 
@@ -345,20 +345,19 @@
                 </div>
                 <ul>
                     <li>Samodzielne prowadzenie punktu odzieżowego (odpowiedzialność za punkt).</li>
-                    <li>Samodzielna realizacja procedur otwarcia i zamknięcia lokalu oraz rozliczanie transakcji finansowych.</li>
+                    <li>Samodzielna realizacja procedur otwarcia i zamknięcia lokalu.</li>
                     <li>Dbanie o atrakcyjny wygląd półek oraz estetykę punktu handlowego.</li>
                 </ul>
             </div>
 
             <div class="job-card">
                 <div class="job-header">
-                    <h3>Praca w Firmach Handlowych – Lider Zespołu Promocyjnego</h3>
+                    <h3>Praca w Firmach Handlowych – Lider Zespołu</h3>
                     <span class="job-date">1999 – 2002</span>
                 </div>
                 <ul>
                     <li>Koordynacja akcji promocyjnych i organizacja eventów handlowych.</li>
                     <li>Dobór, szkolenie oraz aktywny nadzór nad pracą hostess.</li>
-                    <li>Budowanie relacji z przedstawicielami handlowymi i klientami biznesowymi.</li>
                 </ul>
             </div>
 
@@ -370,39 +369,6 @@
                 <ul>
                     <li>Aktywna pomoc klientom zgodnie ze standardami obsługi marki.</li>
                     <li>Przyjmowanie dostaw oraz przygotowanie odzieży do sprzedaży.</li>
-                    <li>Dbanie o porządek w strefie przymierzalni i estetykę salonu.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>HENKEL POLSKA S.A. – Lider Zespołu Promocyjnego</h3>
-                    <span class="job-date">1997</span>
-                </div>
-                <ul>
-                    <li>Bezpośredni udział w akcjach promocyjnych.</li>
-                    <li>Wsparcie sprzedaży i koordynacja pracy zespołu promocyjnego.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>Lee Cooper – Sprzedawca</h3>
-                    <span class="job-date">1996 – 1997</span>
-                </div>
-                <ul>
-                    <li>Dobór asortymentu do potrzeb klientów.</li>
-                    <li>Sprzedaż indywidualna i obsługa klienta.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3>PSS „Społem” – Pracownik Młodociany</h3>
-                    <span class="job-date">1992 – 1995</span>
-                </div>
-                <ul>
-                    <li>Okres szkoleniowy i praktyczna nauka zawodu sprzedawcy.</li>
                 </ul>
             </div>
 
