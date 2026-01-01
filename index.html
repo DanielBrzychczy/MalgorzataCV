@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Małgorzata Fryzowicz Brzychczy - CV</title>
+    <title>Małgorzata Fryzowicz-Brzychczy - CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
@@ -71,7 +71,7 @@
         .contact-info {
             text-align: right;
             font-size: 0.95em;
-            line-height: 1.8;
+            line-height: 2;
         }
 
         .contact-info span {
@@ -88,22 +88,20 @@
         .main-container {
             display: grid;
             grid-template-columns: 350px 1fr;
-            gap: 30px;
             width: 90%;
             max-width: 1200px;
             background: white;
             margin: 30px 0 60px 0;
-            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden; 
         }
 
         .left-column {
             background-color: var(--sidebar-navy);
             color: white;
-            padding: 30px;
-            border-radius: 8px;
-            height: fit-content;
+            padding: 40px 30px;
+            /* Usunięte height: fit-content pozwala na rozciągnięcie do dołu grid-a */
         }
 
         .left-column h2 {
@@ -139,6 +137,10 @@
             color: var(--accent-blue);
         }
 
+        .right-column {
+            padding: 40px;
+        }
+
         .right-column h2 {
             color: #012a4a;
             border-bottom: 2px solid #012a4a;
@@ -157,14 +159,12 @@
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 4px;
-            position: relative;
         }
 
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 5px;
         }
 
         .job-header h3 {
@@ -226,11 +226,8 @@
 
         @media (max-width: 1000px) {
             .header-content { flex-direction: column; text-align: center; }
-            .header-left { flex-direction: column; }
-            .contact-info { text-align: center; }
-            .main-container { grid-template-columns: 1fr; margin-top: 20px; }
-            .job-header { flex-direction: column; gap: 10px; }
-            .job-header h3 { max-width: 100%; }
+            .contact-info { text-align: center; margin-top: 20px; }
+            .main-container { grid-template-columns: 1fr; margin-top: 20px; border-radius: 0; }
         }
     </style>
 </head>
@@ -248,7 +245,7 @@
                 <span>(+48) 602 572 527 <i class="fas fa-phone"></i></span>
                 <span>goniabrzychczy@wp.pl <i class="fas fa-envelope"></i></span>
                 <span>os. Strusia 7/202, Kraków <i class="fas fa-map-marker-alt"></i></span>
-                <span>Ur. 09.03.1978 r. <i class="fas fa-calendar-alt"></i></span>
+                <span>09.03.1978 r. <i class="fas fa-calendar-alt"></i></span>
             </div>
         </div>
     </header>
@@ -262,8 +259,7 @@
                 <li>Profesjonalna obsługa klienta detalicznego</li>
                 <li>Komunikatywność i łatwość nawiązywania kontaktu z klientem</li>
                 <li>Umiejętność pracy z ludźmi</li>
-                <li>Visual Merchandising (ekspozycja towaru)</li>
-                <li>Dbanie o estetykę i wizerunek salonu</li>
+                <li>Visual Merchandising</li>
                 <li>Praca pod presją czasu</li>
             </ul>
 
@@ -363,7 +359,6 @@
                     <li>Koordynacja akcji promocyjnych i organizacja eventów handlowych.</li>
                     <li>Dobór, szkolenie oraz aktywny nadzór nad pracą hostess.</li>
                     <li>Budowanie relacji z przedstawicielami handlowymi i klientami biznesowymi.</li>
-                    <li>Szczegółowe raportowanie efektów przeprowadzonych akcji promocyjnych.</li>
                 </ul>
             </div>
 
